@@ -1,4 +1,4 @@
-import { Photo } from "@/components/ui/Photo";
+import { Photo, type PhotoTint } from "@/components/ui/Photo";
 import type { ReactNode } from "react";
 import { Breadcrumbs, type Crumb } from "@/components/ui/Breadcrumbs";
 
@@ -14,6 +14,8 @@ type PageHeroProps = {
   /** Optional background photo; without one the hero is flat ink. */
   image?: string;
   imageAlt?: string;
+  /** `city` grades blue-hour cityscapes into the shared NEXT STOP palette. */
+  imageTint?: PhotoTint;
   crumbs?: Crumb[];
   /** Buttons, search bars, stat rows — rendered under the copy. */
   children?: ReactNode;
@@ -41,6 +43,7 @@ export function PageHero({
   subtitle,
   image,
   imageAlt = "",
+  imageTint = "soft",
   crumbs,
   children,
   size = "md",
@@ -58,8 +61,9 @@ export function PageHero({
             fill
             priority
             sizes="100vw"
+            tint={imageTint}
             tintClassName="-z-10"
-        className="-z-10 object-cover object-center"
+            className="-z-10 object-cover object-center"
           />
           <div
             aria-hidden

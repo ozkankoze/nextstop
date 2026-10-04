@@ -137,10 +137,10 @@ export const destinations: Destination[] = [
     countrySlug: "spain",
     region: "spain",
     image:
-      "https://images.unsplash.com/photo-1583422409516-2895a77efded?auto=format&fit=crop&w=1400&q=85",
+      "https://images.unsplash.com/photo-1745501639018-e7a42b8bc81e?auto=format&fit=crop&w=1400&q=85",
     heroImage:
-      "https://images.unsplash.com/photo-1593368858664-a7fe556ab936?auto=format&fit=crop&w=2400&q=85",
-    alt: "Aerial view over Barcelona's rooftops towards the sea",
+      "https://images.unsplash.com/photo-1745501639018-e7a42b8bc81e?auto=format&fit=crop&w=2400&q=85",
+    alt: "Barcelona at dusk seen from Park Güell, with the city lights coming on",
     tagline: "Gaudí, Gothic alleys and a beach at the end of the metro line.",
     intro: [
       "Barcelona is where most Spain trips begin, and for good reason: two airports' worth of cheap flights, a walkable Gothic core, and modernista architecture that turns an ordinary street corner into a reason to stop.",
@@ -206,10 +206,10 @@ export const destinations: Destination[] = [
     countrySlug: "spain",
     region: "spain",
     image:
-      "https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=1400&q=85",
+      "https://images.unsplash.com/photo-1589312339947-891682889502?auto=format&fit=crop&w=1400&q=85",
     heroImage:
-      "https://images.unsplash.com/photo-1570698473651-b2de99bae12f?auto=format&fit=crop&w=2400&q=85",
-    alt: "The Metropolis building on Gran Vía in Madrid at low sun",
+      "https://images.unsplash.com/photo-1589312339947-891682889502?auto=format&fit=crop&w=2400&q=85",
+    alt: "Traffic light trails streaking past the lit facades of Gran Vía in Madrid at night",
     tagline: "Spain's late-night capital, with world-class art for free.",
     intro: [
       "Madrid does not have a beach and does not care. What it has is the densest run of great art in Europe, neighbourhoods that each feel like their own small town, and a night that genuinely does not start until midnight.",
@@ -276,10 +276,10 @@ export const destinations: Destination[] = [
     countrySlug: "spain",
     region: "spain",
     image:
-      "https://images.unsplash.com/photo-1509840841025-9088ba78a826?auto=format&fit=crop&w=1400&q=85",
+      "https://images.unsplash.com/photo-1688680021048-d76c80dc9fe1?auto=format&fit=crop&w=1400&q=85",
     heroImage:
-      "https://images.unsplash.com/photo-1661442196003-f2f6eb54bd94?auto=format&fit=crop&w=2400&q=85",
-    alt: "The Giralda tower rising above the rooftops of Seville",
+      "https://images.unsplash.com/photo-1688680021048-d76c80dc9fe1?auto=format&fit=crop&w=2400&q=85",
+    alt: "Seville at night, the city lights reflected in the Guadalquivir",
     tagline: "Orange trees, flamenco courtyards and Andalusian heat.",
     intro: [
       "Seville is the most atmospheric city in southern Spain: a Moorish palace, a cathedral you can see from half the city, and streets so narrow the buildings shade them all afternoon.",
@@ -346,10 +346,10 @@ export const destinations: Destination[] = [
     countrySlug: "spain",
     region: "spain",
     image:
-      "https://images.unsplash.com/photo-1512753360435-329c4535a9a7?auto=format&fit=crop&w=1400&q=85",
+      "https://images.unsplash.com/photo-1505732159444-2ebab1e4891a?auto=format&fit=crop&w=1400&q=85",
     heroImage:
-      "https://images.unsplash.com/photo-1653385324919-e413ff41070e?auto=format&fit=crop&w=2400&q=85",
-    alt: "View over Málaga's rooftops towards the Mediterranean",
+      "https://images.unsplash.com/photo-1505732159444-2ebab1e4891a?auto=format&fit=crop&w=2400&q=85",
+    alt: "Málaga after dark, the city lights running down to the sea",
     tagline: "A beach city with a museum habit and 300 days of sun.",
     intro: [
       "Málaga spent years being treated as the airport you pass through on the way to the Costa del Sol. That is over. The old town has been pedestrianised, the port rebuilt, and there are now more museums per street than almost anywhere in Andalusia.",
@@ -415,10 +415,10 @@ export const destinations: Destination[] = [
     countrySlug: "spain",
     region: "spain",
     image:
-      "https://images.unsplash.com/photo-1514981184024-f7fea649f6ed?auto=format&fit=crop&w=1400&q=85",
+      "https://images.unsplash.com/photo-1730146818696-30040e01132a?auto=format&fit=crop&w=1400&q=85",
     heroImage:
-      "https://images.unsplash.com/photo-1534423839368-1796a4dd1845?auto=format&fit=crop&w=2400&q=85",
-    alt: "The Alhambra palace with the Sierra Nevada mountains behind it",
+      "https://images.unsplash.com/photo-1730146818696-30040e01132a?auto=format&fit=crop&w=2400&q=85",
+    alt: "The Alhambra lit up against the night sky above Granada",
     tagline: "Free tapas, the Alhambra, and snow above the rooftops.",
     intro: [
       "Granada still runs on the old Andalusian rule: order a drink, get a plate of food with it, free. Combine that with a student population and the result is the best-value night out in Spain.",
@@ -484,10 +484,10 @@ export const destinations: Destination[] = [
     countrySlug: "spain",
     region: "spain",
     image:
-      "https://images.unsplash.com/photo-1680537732160-01750bae5217?auto=format&fit=crop&w=1400&q=85",
+      "https://images.unsplash.com/photo-1641900833936-02cdb77d7068?auto=format&fit=crop&w=1400&q=85",
     heroImage:
-      "https://images.unsplash.com/photo-1680537732093-a4cde73479af?auto=format&fit=crop&w=2400&q=85",
-    alt: "Alicante seen from above, with the harbour and the castle hill",
+      "https://images.unsplash.com/photo-1641900833936-02cdb77d7068?auto=format&fit=crop&w=2400&q=85",
+    alt: "Alicante's harbour at night, full of boats under the lit waterfront",
     tagline: "A castle on a rock, a palm-lined promenade, and cheap flights.",
     intro: [
       "Alicante is the relaxed end of the east coast: a working Spanish city with a castle on a limestone crag, a marble promenade along the water and a beach right in the centre.",
@@ -552,10 +552,10 @@ export const destinations: Destination[] = [
     countrySlug: "spain",
     region: "spain",
     image:
-      "https://images.unsplash.com/photo-1662069044442-f7ca8ea67405?auto=format&fit=crop&w=1400&q=85",
+      "https://images.unsplash.com/photo-1759503008497-e18e00f2f496?auto=format&fit=crop&w=1400&q=85",
     heroImage:
-      "https://images.unsplash.com/photo-1636556590144-7e3189066277?auto=format&fit=crop&w=2400&q=85",
-    alt: "The titanium curves of the Guggenheim Museum beside the river in Bilbao",
+      "https://images.unsplash.com/photo-1759503008497-e18e00f2f496?auto=format&fit=crop&w=2400&q=85",
+    alt: "The Guggenheim in Bilbao at night, reflected in the Nervión",
     tagline: "Basque food, industrial grit and a titanium museum on the river.",
     intro: [
       "Bilbao rebuilt itself around a museum and it worked. The Guggenheim turned a shipbuilding city into a design destination, but the old town behind it never stopped being a Basque market town.",
@@ -620,10 +620,10 @@ export const destinations: Destination[] = [
     countrySlug: "spain",
     region: "spain",
     image:
-      "https://images.unsplash.com/photo-1553455010-bdb488ac12e5?auto=format&fit=crop&w=1400&q=85",
+      "https://images.unsplash.com/photo-1694467934523-568b8210490b?auto=format&fit=crop&w=1400&q=85",
     heroImage:
-      "https://images.unsplash.com/photo-1650894822047-71412dfaf2e4?auto=format&fit=crop&w=2400&q=85",
-    alt: "The bay of San Sebastián with boats and the town behind",
+      "https://images.unsplash.com/photo-1694467934523-568b8210490b?auto=format&fit=crop&w=2400&q=85",
+    alt: "Fireworks over San Sebastián during the summer festival, the bay lit up below",
     tagline: "A perfect shell-shaped bay and the best food in Spain.",
     intro: [
       "La Concha is the most photographed bay in Spain and it deserves it: a near-perfect curve of sand with a wooded island in the middle and a promenade the whole town walks in the evening.",
@@ -690,10 +690,10 @@ export const destinations: Destination[] = [
     countrySlug: "albania",
     region: "balkans",
     image:
-      "https://images.unsplash.com/photo-1632353913765-9b56b7b4bd55?auto=format&fit=crop&w=1400&q=85",
+      "https://images.unsplash.com/photo-1699455614115-70d6db420d03?auto=format&fit=crop&w=1400&q=85",
     heroImage:
-      "https://images.unsplash.com/photo-1693562142975-6a5e4b4d9039?auto=format&fit=crop&w=2400&q=85",
-    alt: "Skanderbeg Square in Tirana with the clock tower behind",
+      "https://images.unsplash.com/photo-1699455614115-70d6db420d03?auto=format&fit=crop&w=2400&q=85",
+    alt: "A Tirana landmark washed in blue light after dark",
     tagline: "Painted facades, mountain air and Europe's best-value coffee.",
     intro: [
       "Tirana is the most surprising capital in the Balkans: bunkers turned into museums, communist blocks painted in primary colours, and a cable car to a mountain fifteen minutes from the centre.",
@@ -757,10 +757,10 @@ export const destinations: Destination[] = [
     countrySlug: "north-macedonia",
     region: "balkans",
     image:
-      "https://images.unsplash.com/photo-1653389167152-7dbd6d165631?auto=format&fit=crop&w=1400&q=85",
+      "https://images.unsplash.com/photo-1623848311120-b561988c6615?auto=format&fit=crop&w=1400&q=85",
     heroImage:
-      "https://images.unsplash.com/photo-1618735751653-d221b2436b0e?auto=format&fit=crop&w=2400&q=85",
-    alt: "A church on a cliff above Lake Ohrid",
+      "https://images.unsplash.com/photo-1623848311120-b561988c6615?auto=format&fit=crop&w=2400&q=85",
+    alt: "The old town of Ohrid above the lake at sunset",
     tagline: "One of Europe's oldest lakes, with a town built above it.",
     intro: [
       "Lake Ohrid is three million years old and clear enough to see the bottom well out from shore. The town stacked above it holds a fortress, a Roman amphitheatre and a cliff-edge church that appears on every Macedonian postcard.",
@@ -824,10 +824,10 @@ export const destinations: Destination[] = [
     countrySlug: "north-macedonia",
     region: "balkans",
     image:
-      "https://images.unsplash.com/photo-1642291373671-29794831ebce?auto=format&fit=crop&w=1400&q=85",
+      "https://images.unsplash.com/photo-1608509993206-779595bbd6f9?auto=format&fit=crop&w=1400&q=85",
     heroImage:
-      "https://images.unsplash.com/photo-1570654672073-fc434f47e6a4?auto=format&fit=crop&w=2400&q=85",
-    alt: "An equestrian statue on the main square of Skopje",
+      "https://images.unsplash.com/photo-1608509993206-779595bbd6f9?auto=format&fit=crop&w=2400&q=85",
+    alt: "Skopje at night, the bridges and monuments lit along the Vardar",
     tagline: "An Ottoman bazaar on one bank, marble statues on the other.",
     intro: [
       "Skopje is two cities separated by a river. On one side, a huge Ottoman bazaar of mosques, caravanserais and grill houses. On the other, a state-funded rebuild of neoclassical facades and enormous statues.",
@@ -892,10 +892,10 @@ export const destinations: Destination[] = [
     countrySlug: "serbia",
     region: "balkans",
     image:
-      "https://images.unsplash.com/photo-1613601740367-410ae03b2ec7?auto=format&fit=crop&w=1400&q=85",
+      "https://images.unsplash.com/photo-1747041502649-ee6dde6b8b4b?auto=format&fit=crop&w=1400&q=85",
     heroImage:
-      "https://images.unsplash.com/photo-1706480228561-6e6ba0b5a44b?auto=format&fit=crop&w=2400&q=85",
-    alt: "Belgrade's riverfront where the Sava meets the Danube",
+      "https://images.unsplash.com/photo-1747041502649-ee6dde6b8b4b?auto=format&fit=crop&w=2400&q=85",
+    alt: "Belgrade at dusk, the city lights reflected on the water",
     tagline: "Two rivers, river-barge clubs and a fortress above both.",
     intro: [
       "Belgrade has been fought over for two thousand years and it shows: an Austro-Hungarian core, socialist blocks across the river, and a fortress at the point where the Sava joins the Danube.",
@@ -959,10 +959,10 @@ export const destinations: Destination[] = [
     countrySlug: "bosnia-herzegovina",
     region: "balkans",
     image:
-      "https://images.unsplash.com/photo-1681006129599-da712304f338?auto=format&fit=crop&w=1400&q=85",
+      "https://images.unsplash.com/photo-1680134450834-8ac9db19502f?auto=format&fit=crop&w=1400&q=85",
     heroImage:
-      "https://images.unsplash.com/photo-1636185560435-a0462ca912bb?auto=format&fit=crop&w=2400&q=85",
-    alt: "Sarajevo's rooftops with the surrounding mountains behind",
+      "https://images.unsplash.com/photo-1680134450834-8ac9db19502f?auto=format&fit=crop&w=2400&q=85",
+    alt: "Sarajevo in the evening, lights spreading up the valley sides",
     tagline: "Where east and west meet, in a valley ringed by mountains.",
     intro: [
       "Walk down one street in Sarajevo and the architecture changes from Ottoman to Austro-Hungarian mid-block — there is even a line in the pavement marking it.",
@@ -1026,10 +1026,10 @@ export const destinations: Destination[] = [
     countrySlug: "montenegro",
     region: "balkans",
     image:
-      "https://images.unsplash.com/photo-1664958451522-90ce9fd47b2c?auto=format&fit=crop&w=1400&q=85",
+      "https://images.unsplash.com/photo-1623457813330-9970000bc91d?auto=format&fit=crop&w=1400&q=85",
     heroImage:
-      "https://images.unsplash.com/photo-1615352916571-99807ec84e29?auto=format&fit=crop&w=2400&q=85",
-    alt: "The town of Kotor at the head of its bay, below steep mountains",
+      "https://images.unsplash.com/photo-1623457813330-9970000bc91d?auto=format&fit=crop&w=2400&q=85",
+    alt: "Kotor and its bay from above at night, the old town glowing below the mountains",
     tagline: "A walled town at the head of a fjord-like bay.",
     intro: [
       "Kotor sits where the Bay of Kotor runs out of room, with mountains rising almost vertically behind a Venetian walled town of squares and stone lanes.",
@@ -1093,10 +1093,10 @@ export const destinations: Destination[] = [
     countrySlug: "hungary",
     region: "balkans",
     image:
-      "https://images.unsplash.com/photo-1616432902940-b7a1acbc60b3?auto=format&fit=crop&w=1400&q=85",
+      "https://images.unsplash.com/photo-1520986840182-5b15f734c85c?auto=format&fit=crop&w=1400&q=85",
     heroImage:
-      "https://images.unsplash.com/photo-1558392606-89f76d482685?auto=format&fit=crop&w=2400&q=85",
-    alt: "The Hungarian Parliament Building on the banks of the Danube",
+      "https://images.unsplash.com/photo-1520986840182-5b15f734c85c?auto=format&fit=crop&w=2400&q=85",
+    alt: "A lit bridge over the Danube in Budapest at night",
     tagline: "Thermal baths, ruin bars and the grandest river in Europe.",
     intro: [
       "Budapest is two cities joined by bridges: hilly, quiet Buda on one bank and flat, busy Pest on the other, with the Danube and the Parliament building between them.",

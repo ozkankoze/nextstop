@@ -228,6 +228,7 @@ export default async function RoutePage({ params }: Props) {
                         src={destination.image}
                         alt={destination.alt}
                         fill
+                        tint="city"
                         sizes="(min-width: 1024px) 248px, (min-width: 640px) 220px, 90vw"
                         className="object-cover"
                       />

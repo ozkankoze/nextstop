@@ -63,6 +63,7 @@ export default async function DestinationPage({ params }: Props) {
         eyebrow={destination.country}
         title={destination.city}
         image={destination.heroImage}
+        imageTint="city"
         imageAlt={destination.alt}
         subtitle={destination.tagline}
         crumbs={[

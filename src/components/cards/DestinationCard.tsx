@@ -27,6 +27,7 @@ export function DestinationCard({
           src={image}
           alt={alt}
           fill
+          tint="city"
           sizes="(min-width: 1280px) 230px, (min-width: 1024px) 20vw, (min-width: 640px) 32vw, 48vw"
           className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
@@ -72,6 +73,7 @@ export function DestinationCard({
           src={image}
           alt={alt}
           fill
+          tint="city"
           sizes="(min-width: 1280px) 290px, (min-width: 1024px) 31vw, (min-width: 640px) 46vw, 92vw"
           className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
