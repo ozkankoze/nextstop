@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { Photo } from "@/components/ui/Photo";
 import Link from "next/link";
 import { ArrowRightIcon, ClockIcon } from "@/components/ui/Icons";
 import { Badge } from "@/components/ui/Misc";
@@ -13,7 +13,7 @@ export function GuideCard({ guide }: { guide: Guide }) {
         href={href}
         className="photo-fallback relative block aspect-16/10 overflow-hidden"
       >
-        <Image
+        <Photo
           src={guide.image}
           alt={guide.alt}
           fill

@@ -69,11 +69,9 @@ export const destinations: Destination[] = [
     country: "Spain",
     countrySlug: "spain",
     region: "spain",
-    image:
-      "https://images.unsplash.com/photo-1719401542194-95139aed215c?auto=format&fit=crop&w=1400&q=85",
-    heroImage:
-      "https://images.unsplash.com/photo-1751834740962-9c41fe457858?auto=format&fit=crop&w=2400&q=85",
-    alt: "The curved white shells of the City of Arts and Sciences in Valencia",
+    image: "/images/valencia-night.jpg",
+    heroImage: "/images/valencia-night.jpg",
+    alt: "The City of Arts and Sciences in Valencia at blue hour, lit up and reflected in the water with pink light trails running past",
     tagline: "Beach mornings, old-town evenings, and Spain's friendliest pace.",
     intro: [
       "Valencia is the city that convinces backpackers to stay an extra week. Spain's third city packs a medieval old town, nine kilometres of sand and a nine-kilometre park built in a drained riverbed into somewhere you can cross by bike in twenty minutes.",

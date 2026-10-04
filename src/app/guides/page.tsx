@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import { Photo } from "@/components/ui/Photo";
 import Link from "next/link";
 import { Suspense } from "react";
 import { PageHero } from "@/components/ui/PageHero";
@@ -57,7 +57,7 @@ export default function GuidesPage() {
               href={`/guides/${featured.slug}`}
               className="photo-fallback relative block aspect-16/9 overflow-hidden lg:aspect-auto lg:w-[52%] lg:shrink-0"
             >
-              <Image
+              <Photo
                 src={featured.image}
                 alt={featured.alt}
                 fill

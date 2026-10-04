@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { Photo } from "@/components/ui/Photo";
 import Link from "next/link";
 import type { ComponentType, SVGProps } from "react";
 import {
@@ -25,13 +25,14 @@ export function PartnerCta() {
   return (
     <section aria-labelledby="partner-cta" className="container-page py-14">
       <div className="relative isolate overflow-hidden rounded-2xl bg-ink-950">
-        <Image
+        <Photo
           src={partnerBanner}
           alt="A backpacker with a NEXT STOP Network pack looking out over a turquoise Spanish cove"
           fill
           placeholder="blur"
           sizes="(min-width: 1240px) 1160px, 100vw"
-          className="-z-10 object-cover object-center"
+          tintClassName="-z-10"
+        className="-z-10 object-cover object-center"
         />
         <div
           aria-hidden

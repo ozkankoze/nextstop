@@ -1,22 +1,8 @@
-import Image from "next/image";
+import { Photo } from "@/components/ui/Photo";
 import Link from "next/link";
 import { ArrowRightIcon, ChevronRightIcon, MapPinIcon } from "@/components/ui/Icons";
 import type { Destination } from "@/data/destinations";
 import { countHostelsByDestination } from "@/data/hostels";
-
-/**
- * A soft brand-pink cast over destination photography, so the grid reads as
- * NEXT STOP rather than as a generic stock-photo wall. `soft-light` keeps the
- * original detail and only shifts the colour temperature.
- */
-function BrandTint() {
-  return (
-    <span
-      aria-hidden
-      className="absolute inset-0 bg-gradient-to-tr from-brand-600/70 via-brand-500/25 to-transparent mix-blend-soft-light transition-opacity duration-500 group-hover:opacity-60"
-    />
-  );
-}
 
 type DestinationCardProps = {
   destination: Destination;
@@ -37,14 +23,13 @@ export function DestinationCard({
         href={href}
         className="group photo-fallback relative block aspect-5/4 overflow-hidden rounded-xl"
       >
-        <Image
+        <Photo
           src={image}
           alt={alt}
           fill
           sizes="(min-width: 1280px) 230px, (min-width: 1024px) 20vw, (min-width: 640px) 32vw, 48vw"
           className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
-        <BrandTint />
         <span
           aria-hidden
           className="absolute inset-0 bg-gradient-to-t from-ink-950/90 via-ink-950/20 to-ink-950/5"
@@ -83,14 +68,13 @@ export function DestinationCard({
         href={href}
         className="photo-fallback relative block aspect-16/10 overflow-hidden"
       >
-        <Image
+        <Photo
           src={image}
           alt={alt}
           fill
           sizes="(min-width: 1280px) 290px, (min-width: 1024px) 31vw, (min-width: 640px) 46vw, 92vw"
           className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
-        <BrandTint />
         <span
           aria-hidden
           className="absolute inset-0 bg-gradient-to-t from-ink-950/70 to-transparent"

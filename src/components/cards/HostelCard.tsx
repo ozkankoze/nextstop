@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { Photo } from "@/components/ui/Photo";
 import Link from "next/link";
 import { useState } from "react";
 import { ArrowRightIcon, HeartIcon, StarIcon } from "@/components/ui/Icons";
@@ -21,7 +21,7 @@ export function HostelCard({
     <article className="flex h-full flex-col overflow-hidden rounded-xl border border-ink-100 bg-white shadow-[0_2px_10px_-4px_rgba(6,9,15,0.12)] transition-shadow duration-200 hover:shadow-[0_14px_34px_-16px_rgba(6,9,15,0.4)]">
       <div className="photo-fallback relative aspect-16/10">
         <Link href={href} className="absolute inset-0 block">
-          <Image
+          <Photo
             src={hostel.images[0]}
             alt={hostel.alt}
             fill

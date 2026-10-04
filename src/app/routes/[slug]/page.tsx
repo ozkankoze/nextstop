@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import type { ComponentType, SVGProps } from "react";
-import Image from "next/image";
+import { Photo } from "@/components/ui/Photo";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { PageHero } from "@/components/ui/PageHero";
@@ -224,7 +224,7 @@ export default async function RoutePage({ params }: Props) {
                 <div className="min-w-0 flex-1">
                   <article className="overflow-hidden rounded-xl border border-ink-100 bg-white shadow-[0_2px_10px_-6px_rgba(6,9,15,0.14)] sm:flex">
                     <div className="photo-fallback relative aspect-16/9 sm:aspect-auto sm:w-[220px] sm:shrink-0 lg:w-[248px]">
-                      <Image
+                      <Photo
                         src={destination.image}
                         alt={destination.alt}
                         fill

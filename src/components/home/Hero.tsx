@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { Photo } from "@/components/ui/Photo";
 import Link from "next/link";
 import { HeroSearch } from "@/components/home/HeroSearch";
 import { DoodleArrow } from "@/components/ui/Icons";
@@ -9,18 +9,20 @@ export function Hero() {
       aria-labelledby="hero-title"
       className="relative isolate flex min-h-[620px] flex-col justify-end overflow-hidden bg-ink-950 pt-[104px] pb-12 sm:min-h-[680px] lg:min-h-[720px] lg:pb-14"
     >
-      <Image
-        src="https://images.unsplash.com/photo-1586022045497-31fcf76fa6cc?auto=format&fit=crop&w=2400&q=85"
-        alt="Backpacker looking out over a lakeside town at sunset"
+      {/* The backpacker sits right of centre, so keep her in frame on phones. */}
+      <Photo
+        src="/images/home-hero.jpg"
+        alt="A backpacker with a NEXT STOP Network pack looking out over a turquoise Spanish cove"
         fill
         priority
         sizes="100vw"
-        className="-z-10 object-cover object-center"
+        tintClassName="-z-10"
+        className="-z-10 object-cover object-[68%_center]"
       />
       {/* Readability layers — dark from the left and along the bottom */}
       <div
         aria-hidden
-        className="absolute inset-0 -z-10 bg-gradient-to-r from-ink-950 via-ink-950/70 to-ink-950/25"
+        className="absolute inset-0 -z-10 bg-gradient-to-r from-ink-950 via-ink-950/70 to-ink-950/25 lg:via-ink-950/55 lg:to-ink-950/10"
       />
       <div
         aria-hidden

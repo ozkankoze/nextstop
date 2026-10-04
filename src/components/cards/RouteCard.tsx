@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { Photo } from "@/components/ui/Photo";
 import Link from "next/link";
 import { ArrowRightIcon, ClockIcon, MapPinIcon } from "@/components/ui/Icons";
 import type { TravelRoute } from "@/data/routes";
@@ -12,7 +12,7 @@ export function RouteCard({ route }: { route: TravelRoute }) {
         href={href}
         className="photo-fallback relative block aspect-16/9 overflow-hidden"
       >
-        <Image
+        <Photo
           src={route.image}
           alt={route.alt}
           fill

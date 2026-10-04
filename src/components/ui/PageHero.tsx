@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { Photo } from "@/components/ui/Photo";
 import type { ReactNode } from "react";
 import { Breadcrumbs, type Crumb } from "@/components/ui/Breadcrumbs";
 
@@ -52,13 +52,14 @@ export function PageHero({
     >
       {image ? (
         <>
-          <Image
+          <Photo
             src={image}
             alt={imageAlt}
             fill
             priority
             sizes="100vw"
-            className="-z-10 object-cover object-center"
+            tintClassName="-z-10"
+        className="-z-10 object-cover object-center"
           />
           <div
             aria-hidden

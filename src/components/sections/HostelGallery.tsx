@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { Photo } from "@/components/ui/Photo";
 import { useState } from "react";
 
 export function HostelGallery({
@@ -17,7 +17,7 @@ export function HostelGallery({
   return (
     <div>
       <div className="photo-fallback relative aspect-16/9 overflow-hidden rounded-xl">
-        <Image
+        <Photo
           src={images[active]}
           alt={`${name} — photo ${active + 1} of ${images.length}. ${alt}`}
           fill
@@ -42,10 +42,11 @@ export function HostelGallery({
                     : "opacity-75 hover:opacity-100"
                 }`}
               >
-                <Image
+                <Photo
                   src={image}
                   alt=""
                   fill
+                  tint="none"
                   sizes="180px"
                   className="object-cover"
                 />
