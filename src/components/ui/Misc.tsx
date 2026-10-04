@@ -10,11 +10,13 @@ import {
   FileIcon,
   GlobeIcon,
   HandshakeIcon,
+  HostelsIcon,
   KitchenIcon,
   LockIcon,
   LuggageIcon,
   MegaphoneIcon,
   QrCodeIcon,
+  ReferralArrowIcon,
   RouteIcon,
   ScanIcon,
   ShieldIcon,
@@ -48,7 +50,10 @@ export const iconRegistry: Record<string, IconComponent> = {
   phone: SmartphoneIcon,
   pass: SmartphoneIcon,
   bookings: TrendingUpIcon,
+  profit: TrendingUpIcon,
+  referral: ReferralArrowIcon,
   handshake: HandshakeIcon,
+  hostels: HostelsIcon,
   chart: ChartIcon,
   file: FileIcon,
   megaphone: MegaphoneIcon,
@@ -85,7 +90,7 @@ export function Badge({
   className = "",
 }: {
   children: ReactNode;
-  tone?: "brand" | "ink" | "muted" | "light";
+  tone?: "brand" | "ink" | "muted" | "light" | "open";
   className?: string;
 }) {
   const tones = {
@@ -93,6 +98,8 @@ export function Badge({
     ink: "bg-ink-900 text-white",
     muted: "bg-ink-100 text-ink-600",
     light: "border border-white/25 text-white/90",
+    /** "Now open" — the only place the savings green is used as a status. */
+    open: "bg-save-bg text-save",
   };
   return (
     <span

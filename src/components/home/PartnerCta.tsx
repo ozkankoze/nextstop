@@ -4,18 +4,21 @@ import type { ComponentType, SVGProps } from "react";
 import {
   ArrowRightIcon,
   GlobeIcon,
+  NetworkIcon,
   TrendingUpIcon,
   UsersIcon,
 } from "@/components/ui/Icons";
 import { partnerPerks, type PartnerPerkIcon } from "@/data/next-pass";
+import partnerBanner from "../../../public/images/partner-banner.jpg";
 
 const perkIcons: Record<
   PartnerPerkIcon,
   ComponentType<SVGProps<SVGSVGElement>>
 > = {
-  bookings: TrendingUpIcon,
+  profit: TrendingUpIcon,
   globe: GlobeIcon,
   community: UsersIcon,
+  ecosystem: NetworkIcon,
 };
 
 export function PartnerCta() {
@@ -23,15 +26,16 @@ export function PartnerCta() {
     <section aria-labelledby="partner-cta" className="container-page py-14">
       <div className="relative isolate overflow-hidden rounded-2xl bg-ink-950">
         <Image
-          src="https://images.unsplash.com/photo-1651946827402-e233188fd59c?auto=format&fit=crop&w=1600&q=80"
-          alt="Travellers celebrating together at sunset"
+          src={partnerBanner}
+          alt="A backpacker with a NEXT STOP Network pack looking out over a turquoise Spanish cove"
           fill
+          placeholder="blur"
           sizes="(min-width: 1240px) 1160px, 100vw"
           className="-z-10 object-cover object-center"
         />
         <div
           aria-hidden
-          className="absolute inset-0 -z-10 bg-gradient-to-r from-ink-950 via-ink-950/90 to-ink-950/35"
+          className="absolute inset-0 -z-10 bg-gradient-to-r from-ink-950 via-ink-950/88 to-ink-950/20"
         />
 
         <div className="flex flex-col gap-8 p-7 sm:p-9 lg:flex-row lg:items-center lg:justify-between lg:gap-10 lg:p-11">
@@ -43,8 +47,8 @@ export function PartnerCta() {
               Become a <span className="text-brand-500">NEXT STOP</span> Partner
             </h2>
             <p className="mt-3 text-[13.5px] leading-relaxed text-white/75">
-              Join our global hostel network and connect with travelers from
-              around the world.
+              Join our rapidly growing hostel network and connect with
+              backpackers from around the world.
             </p>
             <Link
               href="/partners"
@@ -55,13 +59,13 @@ export function PartnerCta() {
             </Link>
           </div>
 
-          <ul className="flex flex-wrap gap-8 sm:gap-10 lg:shrink-0">
+          <ul className="grid grid-cols-2 gap-x-6 gap-y-7 sm:gap-x-9 lg:shrink-0 lg:grid-cols-4">
             {partnerPerks.map((perk) => {
               const Icon = perkIcons[perk.icon];
               return (
                 <li
                   key={perk.label}
-                  className="flex w-[92px] flex-col items-center gap-2.5 text-center"
+                  className="flex w-full flex-col items-center gap-2.5 text-center lg:w-[96px]"
                 >
                   <span
                     aria-hidden

@@ -7,10 +7,20 @@ import { Button } from "@/components/ui/Button";
 import { Field, Select, TextInput } from "@/components/ui/Field";
 import { EmptyState } from "@/components/ui/Misc";
 import { SlidersIcon } from "@/components/ui/Icons";
-import { destinationsByLaunchOrder } from "@/data/destinations";
+import {
+  countries,
+  destinationsByLaunchOrder,
+  type CountrySlug,
+} from "@/data/destinations";
 import { hostels } from "@/data/hostels";
 
-type SortKey = "recommended" | "price-asc" | "rating-desc";
+type SortKey =
+  | "recommended"
+  | "price-asc"
+  | "price-desc"
+  | "rating-desc"
+  | "centre-asc"
+  | "beach-asc";
 
 const PRICE_MAX = 35;
 
@@ -18,10 +28,14 @@ export function HostelsExplorer() {
   const params = useSearchParams();
   const initialDestination = params.get("destination") ?? "all";
 
+  const initialCity = destinationsByLaunchOrder.find(
+    (d) => d.slug === initialDestination
+  );
+  const [country, setCountry] = useState<CountrySlug | "all">(
+    initialCity ? initialCity.countrySlug : "all"
+  );
   const [destination, setDestination] = useState(
-    destinationsByLaunchOrder.some((d) => d.slug === initialDestination)
-      ? initialDestination
-      : "all"
+    initialCity ? initialCity.slug : "all"
   );
   const [checkIn, setCheckIn] = useState("");
   const [checkOut, setCheckOut] = useState("");
@@ -30,30 +44,73 @@ export function HostelsExplorer() {
   const [minRating, setMinRating] = useState(0);
   const [sort, setSort] = useState<SortKey>("recommended");
 
-  // Only list cities that actually have partner hostels.
-  const cityOptions = destinationsByLaunchOrder.filter((d) =>
+  // Only offer places that actually have partner hostels.
+  const placesWithHostels = destinationsByLaunchOrder.filter((d) =>
     hostels.some((h) => h.destinationSlug === d.slug)
   );
+  const countryOptions = countries.filter((c) =>
+    placesWithHostels.some((d) => d.countrySlug === c.slug)
+  );
+  const cityOptions =
+    country === "all"
+      ? placesWithHostels
+      : placesWithHostels.filter((d) => d.countrySlug === country);
+
+  // Picking a country narrows the destination list, so clear a stale choice.
+  const handleCountryChange = (next: CountrySlug | "all") => {
+    setCountry(next);
+    if (next !== "all") {
+      const stillValid = placesWithHostels.some(
+        (d) => d.slug === destination && d.countrySlug === next
+      );
+      if (!stillValid) setDestination("all");
+    }
+  };
 
   const results = useMemo(() => {
+    const allowedSlugs = new Set(
+      (country === "all"
+        ? placesWithHostels
+        : placesWithHostels.filter((d) => d.countrySlug === country)
+      ).map((d) => d.slug)
+    );
+
     const filtered = hostels.filter((hostel) => {
-      if (destination !== "all" && hostel.destinationSlug !== destination)
+      if (destination !== "all") {
+        if (hostel.destinationSlug !== destination) return false;
+      } else if (!allowedSlugs.has(hostel.destinationSlug)) {
         return false;
+      }
       if (hostel.nextStopPrice > maxPrice) return false;
       if (hostel.rating < minRating) return false;
       return true;
     });
 
-    if (sort === "price-asc") {
-      return [...filtered].sort((a, b) => a.nextStopPrice - b.nextStopPrice);
+    switch (sort) {
+      case "price-asc":
+        return [...filtered].sort((a, b) => a.nextStopPrice - b.nextStopPrice);
+      case "price-desc":
+        return [...filtered].sort((a, b) => b.nextStopPrice - a.nextStopPrice);
+      case "rating-desc":
+        return [...filtered].sort((a, b) => b.rating - a.rating);
+      case "centre-asc":
+        return [...filtered].sort(
+          (a, b) => a.distanceToCentreKm - b.distanceToCentreKm
+        );
+      case "beach-asc":
+        // Inland hostels have no beach, so they sort to the bottom.
+        return [...filtered].sort(
+          (a, b) =>
+            (a.distanceToBeachKm ?? Infinity) - (b.distanceToBeachKm ?? Infinity)
+        );
+      default:
+        return filtered;
     }
-    if (sort === "rating-desc") {
-      return [...filtered].sort((a, b) => b.rating - a.rating);
-    }
-    return filtered;
-  }, [destination, maxPrice, minRating, sort]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [country, destination, maxPrice, minRating, sort]);
 
   const reset = () => {
+    setCountry("all");
     setDestination("all");
     setCheckIn("");
     setCheckOut("");
@@ -84,7 +141,32 @@ export function HostelsExplorer() {
         </p>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          <Field label="Destination" htmlFor="filter-destination">
+          <Field label="Country" htmlFor="filter-country">
+            <Select
+              id="filter-country"
+              value={country}
+              onChange={(e) =>
+                handleCountryChange(e.target.value as CountrySlug | "all")
+              }
+            >
+              <option value="all">All countries</option>
+              {countryOptions.map((option) => (
+                <option key={option.slug} value={option.slug}>
+                  {option.name}
+                </option>
+              ))}
+            </Select>
+          </Field>
+
+          <Field
+            label="Destination"
+            htmlFor="filter-destination"
+            hint={
+              country === "all"
+                ? undefined
+                : `${cityOptions.length} in this country`
+            }
+          >
             <Select
               id="filter-destination"
               value={destination}
@@ -93,7 +175,7 @@ export function HostelsExplorer() {
               <option value="all">All destinations</option>
               {cityOptions.map((city) => (
                 <option key={city.slug} value={city.slug}>
-                  {city.city}, {city.country}
+                  {city.city}
                 </option>
               ))}
             </Select>
@@ -170,7 +252,10 @@ export function HostelsExplorer() {
             >
               <option value="recommended">Recommended</option>
               <option value="price-asc">Price: low to high</option>
+              <option value="price-desc">Price: high to low</option>
               <option value="rating-desc">Rating: high to low</option>
+              <option value="centre-asc">Distance from the centre</option>
+              <option value="beach-asc">Distance from the beach</option>
             </Select>
           </Field>
         </div>

@@ -4,6 +4,20 @@ import { ArrowRightIcon, ChevronRightIcon, MapPinIcon } from "@/components/ui/Ic
 import type { Destination } from "@/data/destinations";
 import { countHostelsByDestination } from "@/data/hostels";
 
+/**
+ * A soft brand-pink cast over destination photography, so the grid reads as
+ * NEXT STOP rather than as a generic stock-photo wall. `soft-light` keeps the
+ * original detail and only shifts the colour temperature.
+ */
+function BrandTint() {
+  return (
+    <span
+      aria-hidden
+      className="absolute inset-0 bg-gradient-to-tr from-brand-600/70 via-brand-500/25 to-transparent mix-blend-soft-light transition-opacity duration-500 group-hover:opacity-60"
+    />
+  );
+}
+
 type DestinationCardProps = {
   destination: Destination;
   /** `compact` is the home-page row; `full` is the /destinations grid. */
@@ -27,12 +41,13 @@ export function DestinationCard({
           src={image}
           alt={alt}
           fill
-          sizes="(min-width: 1024px) 190px, (min-width: 640px) 30vw, 45vw"
+          sizes="(min-width: 1280px) 230px, (min-width: 1024px) 20vw, (min-width: 640px) 32vw, 48vw"
           className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
+        <BrandTint />
         <span
           aria-hidden
-          className="absolute inset-0 bg-gradient-to-t from-ink-950/90 via-ink-950/25 to-ink-950/10"
+          className="absolute inset-0 bg-gradient-to-t from-ink-950/90 via-ink-950/20 to-ink-950/5"
         />
         <span
           aria-hidden
@@ -72,9 +87,10 @@ export function DestinationCard({
           src={image}
           alt={alt}
           fill
-          sizes="(min-width: 1024px) 300px, (min-width: 640px) 45vw, 90vw"
+          sizes="(min-width: 1280px) 290px, (min-width: 1024px) 31vw, (min-width: 640px) 46vw, 92vw"
           className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
+        <BrandTint />
         <span
           aria-hidden
           className="absolute inset-0 bg-gradient-to-t from-ink-950/70 to-transparent"

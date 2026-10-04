@@ -4,16 +4,14 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ButtonLink } from "@/components/ui/Button";
 import { Badge, DemoNote, ValueCard } from "@/components/ui/Misc";
 import { ArrowRightIcon } from "@/components/ui/Icons";
-import { getDestination } from "@/data/destinations";
 import { travellerBenefits, travellerComparison } from "@/data/next-pass";
+import { vibes } from "@/data/vibes";
 
 export const metadata: Metadata = {
   title: "NEXT PASS Benefits",
   description:
-    "What a digital NEXT PASS gets you: the hostel's direct rate, a network vouched for by other hostels, onward suggestions for your next city and nothing to install or carry.",
+    "What a digital NEXT PASS gets you: the hostel's NEXT STOP rate, a network vouched for by other hostels, onward suggestions for your next city and nothing to carry between cities.",
 };
-
-const heroDestination = getDestination("malaga");
 
 export default function NextPassBenefitsPage() {
   return (
@@ -23,8 +21,8 @@ export default function NextPassBenefitsPage() {
         eyebrow="NEXT PASS"
         title="What the pass"
         accent="gets you"
-        image={heroDestination?.heroImage}
-        imageAlt={heroDestination?.alt ?? ""}
+        image={vibes.beachGroup.src}
+        imageAlt={vibes.beachGroup.alt}
         subtitle="One scan at reception changes who you book with, how you choose the next city and what the stay costs."
         crumbs={[
           { label: "Home", href: "/" },
@@ -152,12 +150,12 @@ export default function NextPassBenefitsPage() {
         </ul>
 
         <DemoNote>
-          An honest note on savings: a NEXT PASS unlocks the direct rate a
+          An honest note on savings: a NEXT PASS unlocks the NEXT STOP rate a
           partner hostel sets for itself, so the exact difference depends on the
-          hostel, the room type and the dates you pick. NEXT STOP does not
-          promise a guaranteed discount, and every price on this preview build
-          is demo data rather than a live rate. You always see both prices side
-          by side before you book.
+          hostel, the room type and the dates you pick. It is always at least 5%
+          below the regular price and is often more. Every price on this preview
+          build is demo data rather than a live rate, and you always see both
+          prices side by side before you book.
         </DemoNote>
       </section>
 

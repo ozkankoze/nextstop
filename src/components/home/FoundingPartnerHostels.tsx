@@ -42,7 +42,7 @@ export function FoundingPartnerHostels() {
         id="founding-partner-hostels"
         title="Founding Partner"
         accent="Hostels"
-        subtitle="The first hostels joining the NEXT STOP network, starting in Valencia."
+        subtitle="Our first beloved hostels that joined our network."
         action={{ label: "View all hostels", href: "/hostels" }}
       />
 

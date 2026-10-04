@@ -238,7 +238,7 @@ export default async function GuidePage({ params }: Props) {
           <p className="mt-3 max-w-[56ch] text-[13.5px] leading-relaxed text-white/70">
             Pick a route, or start from a single city. Once you are staying at a
             partner hostel, scan the NEXT STOP QR code at reception and the
-            digital pass on your phone unlocks the direct rate at your next one.
+            digital pass on your phone unlocks the NEXT STOP rate at your next one.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <ButtonLink href="/routes" variant="primary">

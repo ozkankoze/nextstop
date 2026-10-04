@@ -2,8 +2,8 @@
  * FAQ content for /faq and the preview block on /next-pass.
  *
  * PRODUCT MODEL: NEXT PASS is digital — generated on the traveller's phone
- * after scanning a partner hostel's NEXT STOP QR code at reception. No app,
- * no physical card, no membership.
+ * after scanning a partner hostel's NEXT STOP QR code at reception. No
+ * physical card, no membership.
  *
  * DEMO DATA — draft product answers for the MVP.
  */
@@ -30,7 +30,7 @@ export const faqCategories: FaqCategory[] = [
         question: "What is a NEXT PASS?",
         answer: [
           "A NEXT PASS is a digital travel pass that connects you to your next stay in the NEXT STOP network. It is a unique code, generated on your phone, that identifies you as someone travelling through the network.",
-          "Entering that code when you book your next destination unlocks the partner hostel's direct rate — the price they set when they are not paying a booking platform a commission.",
+          "Entering that code when you book your next destination unlocks the partner hostel's NEXT STOP rate — the price they can offer when they are not paying a big booking platform's fees.",
         ],
       },
       {
@@ -38,14 +38,7 @@ export const faqCategories: FaqCategory[] = [
         question: "How do I get a NEXT PASS?",
         answer: [
           "Scan the NEXT STOP QR code at the reception of the partner hostel you are staying at. Your phone camera is enough.",
-          "The QR opens a NEXT STOP page in your browser, a short flow generates your unique pass code, and it appears on screen straight away.",
-        ],
-      },
-      {
-        id: "do-i-need-an-app",
-        question: "Do I need to install an app?",
-        answer: [
-          "No. Scanning the QR code opens a normal web page in your phone's browser. There is nothing to download and nothing to sign up for.",
+          "Scanning opens NEXT STOP on your phone, a short flow generates your unique pass code, and it appears on screen straight away.",
         ],
       },
       {
@@ -75,7 +68,7 @@ export const faqCategories: FaqCategory[] = [
         id: "lost-pass",
         question: "What if I lose access to my pass?",
         answer: [
-          "The pass is a code on a web page, so the simplest fix is to save it: screenshot it, bookmark the page, or add it to your phone's wallet if that option is offered.",
+          "The pass is a code on your phone, so the simplest fix is to save it: screenshot it, or save the pass when you are offered the option.",
           "If you lose it entirely while still at the hostel, scan the same QR code again.",
         ],
       },
@@ -89,7 +82,7 @@ export const faqCategories: FaqCategory[] = [
         id: "how-bookings-work",
         question: "How do hostel bookings work?",
         answer: [
-          "You choose a partner hostel, enter your NEXT PASS code, and the direct rate is shown next to the regular rate so you can see the difference before committing.",
+          "You choose a partner hostel, enter your NEXT PASS code, and the NEXT STOP rate is shown next to the regular rate so you can see the difference before committing.",
           "The booking is made with the hostel itself. NEXT STOP connects the two of you rather than sitting in the middle of the transaction.",
         ],
       },
@@ -160,8 +153,8 @@ export const faqCategories: FaqCategory[] = [
         id: "what-does-a-pass-cost",
         question: "What does a NEXT PASS cost?",
         answer: [
-          "There is nothing to buy at reception. Scanning the hostel's QR code generates the pass on your phone.",
-          "If any charge ever applies to a pass, it will be shown in the flow before you confirm it — never added afterwards.",
+          "Nothing. A NEXT PASS is free — scanning the hostel's QR code generates it on your phone, and there is nothing to buy at reception.",
+          "You only ever pay the hostel for the stay you book, at the rate shown before you confirm.",
         ],
       },
       {

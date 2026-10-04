@@ -7,7 +7,7 @@ import { ButtonLink } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Misc";
 import { ArrowRightIcon } from "@/components/ui/Icons";
 import { routes } from "@/data/routes";
-import { getDestination } from "@/data/destinations";
+import { vibes } from "@/data/vibes";
 
 export const metadata: Metadata = {
   title: "Routes",
@@ -24,17 +24,16 @@ const howToUse = [
   {
     title: "Scan the QR code at reception",
     description:
-      "Every partner hostel has its own NEXT STOP QR code on display. Point your phone camera at it, a NEXT STOP page opens in your browser, and a unique digital pass code appears on your phone.",
+      "Every partner hostel has its own NEXT STOP QR code on display. Point your phone camera at it, NEXT STOP opens on your phone, and a unique digital pass code appears there.",
   },
   {
     title: "Book your next stop with the code",
     description:
-      "Enter the code when you book the next partner hostel on the route to unlock its direct rate. At that reception you scan again, and the route carries on city by city.",
+      "Enter the code when you book the next partner hostel on the route to unlock its NEXT STOP rate. At that reception you scan again, and the route carries on city by city.",
   },
 ];
 
 export default function RoutesPage() {
-  const heroDestination = getDestination("seville");
   const cityCount = new Set(
     routes.flatMap((route) => route.stops.map((stop) => stop.destinationSlug))
   ).size;
@@ -45,8 +44,8 @@ export default function RoutesPage() {
         eyebrow="Routes"
         title="Your next stop"
         accent="starts here."
-        image={heroDestination?.heroImage}
-        imageAlt={heroDestination?.alt}
+        image={vibes.walkingTogether.src}
+        imageAlt={vibes.walkingTogether.alt}
         subtitle={
           <>
             {routes.length} multi-city backpacker routes across {cityCount}{" "}
@@ -87,7 +86,7 @@ export default function RoutesPage() {
           id="routes-next-pass"
           title="How to travel a route with a"
           accent="NEXT PASS"
-          subtitle="Scan the QR code at reception, get a pass on your phone, and use it to unlock the partner rate at your next city. No app, nothing printed."
+          subtitle="Scan the QR code at reception, get a pass on your phone, and use it to unlock the partner rate at your next city."
           action={{ label: "How NEXT PASS works", href: "/next-pass" }}
         />
         <ol className="grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-3">

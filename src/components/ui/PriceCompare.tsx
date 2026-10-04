@@ -29,7 +29,7 @@ export function PriceCompare({
         <p className={`mt-1 text-ink-900 ${priceClass}`}>{euro(regularPrice)}</p>
       </div>
       <div className="text-right">
-        <p className="text-[10.5px] text-ink-400">NEXT STOP Price</p>
+        <p className="text-[10.5px] text-ink-400">Price with NEXT PASS</p>
         <p className={`mt-1 text-brand-500 ${priceClass}`}>
           {euro(nextStopPrice)}
         </p>

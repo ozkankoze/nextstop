@@ -3,7 +3,7 @@ import type { ComponentType, SVGProps } from "react";
 import { PageHero } from "@/components/ui/PageHero";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ButtonLink } from "@/components/ui/Button";
-import { Badge, DemoNote, ValueCard } from "@/components/ui/Misc";
+import { Badge, ValueCard } from "@/components/ui/Misc";
 import {
   ArrowRightIcon,
   BackpackIcon,
@@ -24,15 +24,13 @@ import {
   whyJoin,
   type FlowStep,
 } from "@/data/partners";
-import { getHostel } from "@/data/hostels";
+import { vibes } from "@/data/vibes";
 
 export const metadata: Metadata = {
   title: "Become a Partner",
   description:
     "Join NEXT STOP and become part of a growing network of backpacker hostels. One QR code at reception, a digital NEXT PASS on the guest's phone, and onward bookings attributed back to you.",
 };
-
-const heroHostel = getHostel("gracia-rooftop-barcelona");
 
 /** One icon per step of `partnerFlow`, in order. */
 const flowIcons: ComponentType<SVGProps<SVGSVGElement>>[] = [
@@ -51,10 +49,6 @@ const actorLabels: Record<FlowStep["actor"], string> = {
   network: "NEXT STOP",
 };
 
-const hostelStepCount = partnerFlow.filter(
-  (step) => step.actor === "hostel"
-).length;
-
 /**
  * `receptionDeskSteps` is ordered: point at the code, the guest scans, done.
  * Only the first one is work for the hostel — the labels make that explicit.
@@ -65,29 +59,11 @@ const deskOwnership = [
   { label: "Nothing comes back", isHostel: false },
 ];
 
-const referralLoop = [
-  {
-    title: "Your QR carries your identifier",
-    description:
-      "The code on your desk is unique to your hostel. It is the same code every night, and it is the only thing that has to be in the room.",
-  },
-  {
-    title: "The pass records where it came from",
-    description:
-      "When a guest scans, the digital pass generated on their phone is stamped with your hostel and your city before they have typed anything.",
-  },
-  {
-    title: "The onward booking is credited to you",
-    description:
-      "They use that pass to book their next partner hostel, and the attribution travels with it. Neither desk fills anything in.",
-  },
-];
-
 const noAdminPoints = [
   {
-    title: "Nothing to install",
+    title: "It happens on their phone",
     description:
-      "The QR opens a NEXT STOP page in the guest's own browser. No app for them, no software for you.",
+      "The guest scans with their own camera and the pass is generated there. Your desk is not involved after the sentence.",
   },
   {
     title: "Nothing to print per guest",
@@ -109,12 +85,11 @@ export default function PartnersPage() {
         eyebrow="For hostels"
         // U+2028 is a forced line break in CSS text layout, which keeps the
         // three-line heading intact without changing the shared PageHero.
-        title={"More travelers. "}
-        accent={"More bookings. "}
-        titleAfter="One network."
-        image={heroHostel?.images[0]}
-        imageAlt={heroHostel?.alt ?? ""}
-        subtitle="Join NEXT STOP and become part of a growing network of backpacker hostels."
+        title="Thousands of hostels. Millions of backpackers. Let's"
+        accent="connect them!"
+        image={vibes.rooftopFriends.src}
+        imageAlt={vibes.rooftopFriends.alt}
+        subtitle="Join NEXT STOP and become part of a rapidly growing network of backpacker hostels."
         crumbs={[{ label: "Home", href: "/" }, { label: "Become a Partner" }]}
       >
         <div className="flex flex-wrap gap-3">
@@ -135,15 +110,15 @@ export default function PartnersPage() {
       >
         <SectionHeading
           id="for-hostels"
-          title="How NEXT STOP works for"
-          accent="hostels"
+          title="How NEXT STOP works"
+          accent="for hostels"
           subtitle="One QR code at reception. No channel manager, no new software, no change to how you run check-in."
         />
 
         <div className="grid gap-8 lg:grid-cols-[1.6fr_1fr] lg:gap-14">
           <div>
             <p className="max-w-[68ch] text-[14.5px] leading-[1.75] text-ink-600">
-              Backpackers do not plan a whole trip before they leave. They
+              Most backpackers do not plan a whole trip before they leave. They
               decide the next city while they are standing in the one before it,
               usually on the advice of whoever is behind the desk. NEXT STOP
               turns that conversation into something both hostels benefit from:
@@ -155,22 +130,24 @@ export default function PartnersPage() {
               Nothing is added to your working day except pointing at that code.
               There is no inventory to sync, no rates to mirror across channels,
               nothing to print for each guest and no dashboard anyone has to
-              keep open during a busy shift. The network&apos;s job is to send
-              travellers towards you; yours is to send them onward.
+              keep open during a busy shift. NEXT STOP handles the reservation
+              using the information you already list on other major booking
+              platforms, and your only job is to send guests onward through the
+              network.
             </p>
           </div>
 
           <aside className="rounded-xl border border-ink-100 bg-white p-5 shadow-[0_2px_10px_-6px_rgba(6,9,15,0.14)]">
-            <h3 className="flex items-center gap-2 text-[14px] font-semibold text-ink-900">
-              <CheckIcon aria-hidden className="h-4 w-4 text-brand-500" />
+            <h3 className="text-[14px] font-semibold text-ink-900">
               What joining actually involves
             </h3>
             <ul className="mt-4 space-y-3">
               {[
                 "A listing page for your hostel, written with you rather than scraped.",
-                "Your own NEXT STOP QR code, as reception signage and a desk stand.",
+                "Your own NEXT STOP QR code, on a tabletop sign and a wall poster.",
                 "One sentence added to check-in, and nothing removed from it.",
-                "Commercial terms agreed with you directly during launch.",
+                "Start making additional profit by sending backpackers through within our network.",
+                "Commercial terms agreed with you directly during launch. You won\u2019t pay anything, you just benefit!",
               ].map((item) => (
                 <li key={item} className="flex gap-2.5">
                   <CheckIcon
@@ -208,7 +185,7 @@ export default function PartnersPage() {
           id="partner-journey"
           title="The partner"
           accent="journey"
-          subtitle={`${partnerFlow.length} steps from check-in to attribution. Only ${hostelStepCount} of them lands on your desk.`}
+          subtitle={`${partnerFlow.length} steps from check-in to attribution.`}
         />
 
         <ol className="mt-8 grid gap-8 lg:grid-cols-3 lg:gap-x-4 lg:gap-y-12">
@@ -285,7 +262,7 @@ export default function PartnersPage() {
           <p className="mt-5 flex flex-wrap items-baseline gap-x-3 gap-y-1 text-[22px] leading-tight font-bold sm:text-[27px]">
             <span className="text-ink-900">One QR.</span>
             <span className="text-brand-600">A few seconds.</span>
-            <span className="text-ink-900">The traveller is in the network.</span>
+            <span className="text-ink-900">Another happy backpacker.</span>
           </p>
 
           <p className="mt-4 max-w-[66ch] text-[13.5px] leading-relaxed text-ink-600">
@@ -338,14 +315,45 @@ export default function PartnersPage() {
             })}
           </ol>
 
-          <p className="mt-6 max-w-[70ch] text-[12px] leading-relaxed text-ink-500">
-            &ldquo;A few seconds&rdquo; is what the flow is designed around
-            rather than a measured average — the network is pre-launch, so no
-            reception has been timed yet. What is certain is the shape: one code
-            on the desk, one sentence from your staff, and the pass appears on
-            the guest&apos;s own phone.
-          </p>
         </div>
+      </section>
+
+      {/* What it looks like at reception */}
+      <section
+        aria-labelledby="at-reception"
+        className="container-page pt-12 lg:pt-14"
+      >
+        <SectionHeading
+          id="at-reception"
+          title="What it looks like"
+          accent="at reception"
+          subtitle="A code on your desk, a pass on their phone."
+        />
+
+        <p className="mb-7 max-w-[68ch] text-[14.5px] leading-[1.75] text-ink-600">
+          The NEXT PASS is a digital pass on the guest&apos;s phone. Every
+          guest scans the same QR code at reception. This opens a NEXT STOP page
+          in their browser and creates a pass linked to your hostel.
+        </p>
+
+        <ScanFlow />
+
+        <ul className="mt-6 grid gap-5 sm:grid-cols-3">
+          {noAdminPoints.map((point) => (
+            <li
+              key={point.title}
+              className="rounded-xl border border-ink-100 bg-white p-5 shadow-[0_2px_10px_-6px_rgba(6,9,15,0.14)]"
+            >
+              <h3 className="flex items-center gap-2 text-[15px] font-semibold text-ink-900">
+                <CheckIcon aria-hidden className="h-4 w-4 text-brand-500" />
+                {point.title}
+              </h3>
+              <p className="mt-1.5 text-[12.5px] leading-relaxed text-ink-500">
+                {point.description}
+              </p>
+            </li>
+          ))}
+        </ul>
       </section>
 
       {/* Founding Partner Programme */}
@@ -361,7 +369,7 @@ export default function PartnersPage() {
         />
 
         <div className="rounded-2xl bg-ink-950 p-7 sm:p-9 lg:p-11">
-          <Badge tone="light">Open during launch</Badge>
+          <Badge tone="open">Now open</Badge>
           <p className="mt-5 max-w-[66ch] text-[14.5px] leading-relaxed text-white/75">
             A founding partner is not a discounted tier — it is a hostel that
             joins while the product is still being decided. That means more
@@ -395,89 +403,6 @@ export default function PartnersPage() {
         </div>
       </section>
 
-      {/* How referrals work */}
-      <section
-        aria-labelledby="referrals"
-        className="container-page pt-12 lg:pt-14"
-      >
-        <SectionHeading
-          id="referrals"
-          title="How referrals"
-          accent="work"
-          subtitle="Your identifier travels with the pass — that is the whole mechanism."
-        />
-
-        <ol className="grid gap-5 md:grid-cols-3">
-          {referralLoop.map((item, index) => (
-            <li
-              key={item.title}
-              className="rounded-xl border border-ink-100 bg-white p-5 shadow-[0_2px_10px_-6px_rgba(6,9,15,0.14)]"
-            >
-              <span
-                aria-hidden
-                className="mb-4 grid h-8 w-8 place-items-center rounded-full bg-ink-900 text-[12px] font-bold text-white"
-              >
-                {index + 1}
-              </span>
-              <h3 className="text-[15px] font-semibold text-ink-900">
-                {item.title}
-              </h3>
-              <p className="mt-1.5 text-[12.5px] leading-relaxed text-ink-500">
-                {item.description}
-              </p>
-            </li>
-          ))}
-        </ol>
-
-        <DemoNote>
-          What that attribution is worth is agreed individually with each
-          founding partner during launch. NEXT STOP publishes no commission
-          rate, revenue share or booking-volume figure on this page, because
-          none has been settled or measured — the terms are part of the
-          conversation that starts with your application.
-        </DemoNote>
-      </section>
-
-      {/* What it looks like at reception */}
-      <section
-        aria-labelledby="at-reception"
-        className="container-page pt-12 lg:pt-14"
-      >
-        <SectionHeading
-          id="at-reception"
-          title="What it looks like at"
-          accent="reception"
-          subtitle="A code on your desk, a pass on their phone."
-        />
-
-        <p className="mb-7 max-w-[68ch] text-[14.5px] leading-[1.75] text-ink-600">
-          The NEXT PASS is digital and lives on the guest&apos;s phone. Your
-          side of it never changes: the same QR code, in the same place on the
-          desk, for every guest who checks in. They point a camera at it, a NEXT
-          STOP page opens in their browser, and a pass is generated carrying
-          your hostel&apos;s identifier.
-        </p>
-
-        <ScanFlow />
-
-        <ul className="mt-6 grid gap-5 sm:grid-cols-3">
-          {noAdminPoints.map((point) => (
-            <li
-              key={point.title}
-              className="rounded-xl border border-ink-100 bg-white p-5 shadow-[0_2px_10px_-6px_rgba(6,9,15,0.14)]"
-            >
-              <h3 className="flex items-center gap-2 text-[15px] font-semibold text-ink-900">
-                <CheckIcon aria-hidden className="h-4 w-4 text-brand-500" />
-                {point.title}
-              </h3>
-              <p className="mt-1.5 text-[12.5px] leading-relaxed text-ink-500">
-                {point.description}
-              </p>
-            </li>
-          ))}
-        </ul>
-      </section>
-
       {/* Application form */}
       <section
         id="apply"
@@ -486,8 +411,8 @@ export default function PartnersPage() {
       >
         <SectionHeading
           id="apply-heading"
-          title="Apply to become a"
-          accent="partner"
+          title="Apply to become"
+          accent="a partner"
           subtitle="Tell us about the hostel. A person reads every application."
         />
         <div className="max-w-[860px]">

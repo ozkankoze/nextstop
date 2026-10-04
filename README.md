@@ -97,7 +97,7 @@ transparent PNG so it sits on any dark surface:
 
 ## The NEXT PASS model
 
-NEXT PASS is **digital**. There is no physical card, no app and no membership.
+NEXT PASS is **digital**. There is no physical card and no membership.
 
 ```
 STAY  →  SCAN  →  GET YOUR PASS  →  DISCOVER  →  BOOK  →  CONTINUE
@@ -106,7 +106,7 @@ STAY  →  SCAN  →  GET YOUR PASS  →  DISCOVER  →  BOOK  →  CONTINUE
 1. The traveller stays at a NEXT STOP partner hostel.
 2. That hostel has its own unique NEXT STOP QR code on display at reception.
 3. The traveller scans it with their phone camera.
-4. A NEXT STOP mobile web page opens — nothing to install.
+4. NEXT STOP opens on that phone.
 5. A short flow generates a unique digital pass code, e.g. `NS-VLC-4K7Q`.
 6. The pass is shown on the traveller's phone.
 7. Entering that code when booking the next partner hostel unlocks its rate.
@@ -148,6 +148,10 @@ This is a front-end MVP. The following are deliberately demo-only:
 - **QR codes and passes** — every QR on the site is a decorative illustration
   and `NS-VLC-4K7Q` is a made-up sample code. No pass is generated, stored or
   validated anywhere.
+
+Copy across the site deliberately says nothing about **how** a scan opens NEXT
+STOP (browser or app) — a native app is planned, so the wording stays neutral
+(“NEXT STOP opens on your phone”) and makes no “no app required” promise.
 - **Login** — `/partners/login` never authenticates and sends nothing.
 - **Forms** — partner application, contact and newsletter forms validate and
   show success states client-side only.

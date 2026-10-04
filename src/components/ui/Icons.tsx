@@ -269,8 +269,20 @@ export function ArrowLeftIcon(props: IconProps) {
 export function EuroIcon(props: IconProps) {
   return (
     <svg {...base(props)}>
-      <path d="M18 6.5A6.5 6.5 0 0 0 8 12a6.5 6.5 0 0 0 10 5.5" />
-      <path d="M4 10.5h8M4 14h8" />
+      <path d="M18 7.4a6.6 6.6 0 1 0 0 9.2" />
+      <path d="M4.2 10.6h9.6M4.2 13.6h9.6" />
+    </svg>
+  );
+}
+
+/** Two hostels side by side — the referral between partners. */
+export function HostelsIcon(props: IconProps) {
+  return (
+    <svg {...base(props)}>
+      <path d="M2.5 20.5V10L7 6.5 11.5 10v10.5" />
+      <path d="M12.5 20.5V13L17 9.5l4.5 3.5v7.5" />
+      <path d="M1.5 20.5h21" />
+      <path d="M6 13.5h2M6 17h2M16 16h2" />
     </svg>
   );
 }
@@ -574,6 +586,19 @@ export function QrCodeIcon(props: IconProps) {
   );
 }
 
+/**
+ * A forward-curving arrow, used where something is passed on from one hostel
+ * to the next (referrals). Deliberately unmistakable as an arrow.
+ */
+export function ReferralArrowIcon(props: IconProps) {
+  return (
+    <svg {...base(props)}>
+      <path d="M3.5 19c.8-7.3 5.6-11 14.5-11" />
+      <path d="M13.5 3.5 19 8l-5.5 4.5" />
+    </svg>
+  );
+}
+
 export function SmartphoneIcon(props: IconProps) {
   return (
     <svg {...base(props)}>
@@ -589,6 +614,71 @@ export function WalletIcon(props: IconProps) {
       <path d="M3.5 7.5A2 2 0 0 1 5.5 5.5H18a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5.5a2 2 0 0 1-2-2Z" />
       <path d="M3.5 9.5h13a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2h-13" />
       <path d="M15.5 12h.01" />
+    </svg>
+  );
+}
+
+export function NetworkIcon(props: IconProps) {
+  return (
+    <svg {...base(props)}>
+      <circle cx="12" cy="4.5" r="2.2" />
+      <circle cx="4.8" cy="17" r="2.2" />
+      <circle cx="19.2" cy="17" r="2.2" />
+      <path d="M10.5 6.4 6.3 15.1M13.5 6.4l4.2 8.7M7 17h10" />
+    </svg>
+  );
+}
+
+export function BedSingleIcon(props: IconProps) {
+  return (
+    <svg {...base(props)}>
+      <path d="M4 19v-8.5A2.5 2.5 0 0 1 6.5 8h11a2.5 2.5 0 0 1 2.5 2.5V19" />
+      <path d="M4 15h16M4 19h16" />
+      <path d="M8.5 8V6.5h7V8" />
+    </svg>
+  );
+}
+
+export function BedDoubleIcon(props: IconProps) {
+  return (
+    <svg {...base(props)}>
+      <path d="M3 19v-8.5A2.5 2.5 0 0 1 5.5 8h13a2.5 2.5 0 0 1 2.5 2.5V19" />
+      <path d="M3 15h18M3 19h18M12 8v7" />
+      <path d="M6.5 8V6.5h4V8M13.5 8V6.5h4V8" />
+    </svg>
+  );
+}
+
+/** A hand-drawn curving arrow that points up out of its box. */
+export function DoodleArrow({
+  className,
+  flip = false,
+}: {
+  className?: string;
+  flip?: boolean;
+}) {
+  return (
+    <svg
+      viewBox="0 0 96 68"
+      fill="none"
+      aria-hidden
+      focusable="false"
+      className={className}
+      style={flip ? { transform: "scaleX(-1)" } : undefined}
+    >
+      <path
+        d="M90 64C64 62 34 50 24 12"
+        stroke="currentColor"
+        strokeWidth="3.4"
+        strokeLinecap="round"
+      />
+      <path
+        d="M24 9 12 27M24 9l15 12"
+        stroke="currentColor"
+        strokeWidth="3.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
     </svg>
   );
 }

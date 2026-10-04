@@ -42,7 +42,7 @@ export const routes: TravelRoute[] = [
     region: "spain",
     summary: "Barcelona → Valencia → Alicante",
     image:
-      "https://images.unsplash.com/photo-1610213989414-acc5773ba2c6?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1610213989414-acc5773ba2c6?auto=format&fit=crop&w=1600&q=85",
     alt: "People walking along a Mediterranean beach at sunset",
     days: 9,
     intro: [
@@ -96,7 +96,7 @@ export const routes: TravelRoute[] = [
     region: "spain",
     summary: "Barcelona → Madrid → Valencia → Seville",
     image:
-      "https://images.unsplash.com/photo-1543783207-ec64e4d95325?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1543783207-ec64e4d95325?auto=format&fit=crop&w=1600&q=85",
     alt: "The Metropolis building at the intersection of Gran Vía in Madrid",
     days: 14,
     intro: [
@@ -162,7 +162,7 @@ export const routes: TravelRoute[] = [
     region: "spain",
     summary: "Seville → Málaga → Granada",
     image:
-      "https://images.unsplash.com/photo-1559386081-325882507af7?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1559386081-325882507af7?auto=format&fit=crop&w=1600&q=85",
     alt: "A bridge over the river in Seville with the city behind",
     days: 10,
     intro: [
@@ -216,7 +216,7 @@ export const routes: TravelRoute[] = [
     region: "balkans",
     summary: "Tirana → Ohrid → Skopje → Belgrade",
     image:
-      "https://images.unsplash.com/photo-1618735751653-d221b2436b0e?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1618735751653-d221b2436b0e?auto=format&fit=crop&w=1600&q=85",
     alt: "Aerial view of Ohrid town on the hillside above the lake",
     days: 12,
     intro: [

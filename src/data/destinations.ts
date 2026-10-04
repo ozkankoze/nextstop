@@ -70,9 +70,9 @@ export const destinations: Destination[] = [
     countrySlug: "spain",
     region: "spain",
     image:
-      "https://images.unsplash.com/photo-1719401542194-95139aed215c?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1719401542194-95139aed215c?auto=format&fit=crop&w=1400&q=85",
     heroImage:
-      "https://images.unsplash.com/photo-1751834740962-9c41fe457858?auto=format&fit=crop&w=2000&q=80",
+      "https://images.unsplash.com/photo-1751834740962-9c41fe457858?auto=format&fit=crop&w=2400&q=85",
     alt: "The curved white shells of the City of Arts and Sciences in Valencia",
     tagline: "Beach mornings, old-town evenings, and Spain's friendliest pace.",
     intro: [
@@ -139,9 +139,9 @@ export const destinations: Destination[] = [
     countrySlug: "spain",
     region: "spain",
     image:
-      "https://images.unsplash.com/photo-1583422409516-2895a77efded?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1583422409516-2895a77efded?auto=format&fit=crop&w=1400&q=85",
     heroImage:
-      "https://images.unsplash.com/photo-1593368858664-a7fe556ab936?auto=format&fit=crop&w=2000&q=80",
+      "https://images.unsplash.com/photo-1593368858664-a7fe556ab936?auto=format&fit=crop&w=2400&q=85",
     alt: "Aerial view over Barcelona's rooftops towards the sea",
     tagline: "Gaudí, Gothic alleys and a beach at the end of the metro line.",
     intro: [
@@ -208,9 +208,9 @@ export const destinations: Destination[] = [
     countrySlug: "spain",
     region: "spain",
     image:
-      "https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=1400&q=85",
     heroImage:
-      "https://images.unsplash.com/photo-1570698473651-b2de99bae12f?auto=format&fit=crop&w=2000&q=80",
+      "https://images.unsplash.com/photo-1570698473651-b2de99bae12f?auto=format&fit=crop&w=2400&q=85",
     alt: "The Metropolis building on Gran Vía in Madrid at low sun",
     tagline: "Spain's late-night capital, with world-class art for free.",
     intro: [
@@ -278,9 +278,9 @@ export const destinations: Destination[] = [
     countrySlug: "spain",
     region: "spain",
     image:
-      "https://images.unsplash.com/photo-1509840841025-9088ba78a826?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1509840841025-9088ba78a826?auto=format&fit=crop&w=1400&q=85",
     heroImage:
-      "https://images.unsplash.com/photo-1661442196003-f2f6eb54bd94?auto=format&fit=crop&w=2000&q=80",
+      "https://images.unsplash.com/photo-1661442196003-f2f6eb54bd94?auto=format&fit=crop&w=2400&q=85",
     alt: "The Giralda tower rising above the rooftops of Seville",
     tagline: "Orange trees, flamenco courtyards and Andalusian heat.",
     intro: [
@@ -348,9 +348,9 @@ export const destinations: Destination[] = [
     countrySlug: "spain",
     region: "spain",
     image:
-      "https://images.unsplash.com/photo-1512753360435-329c4535a9a7?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1512753360435-329c4535a9a7?auto=format&fit=crop&w=1400&q=85",
     heroImage:
-      "https://images.unsplash.com/photo-1653385324919-e413ff41070e?auto=format&fit=crop&w=2000&q=80",
+      "https://images.unsplash.com/photo-1653385324919-e413ff41070e?auto=format&fit=crop&w=2400&q=85",
     alt: "View over Málaga's rooftops towards the Mediterranean",
     tagline: "A beach city with a museum habit and 300 days of sun.",
     intro: [
@@ -417,9 +417,9 @@ export const destinations: Destination[] = [
     countrySlug: "spain",
     region: "spain",
     image:
-      "https://images.unsplash.com/photo-1514981184024-f7fea649f6ed?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1514981184024-f7fea649f6ed?auto=format&fit=crop&w=1400&q=85",
     heroImage:
-      "https://images.unsplash.com/photo-1534423839368-1796a4dd1845?auto=format&fit=crop&w=2000&q=80",
+      "https://images.unsplash.com/photo-1534423839368-1796a4dd1845?auto=format&fit=crop&w=2400&q=85",
     alt: "The Alhambra palace with the Sierra Nevada mountains behind it",
     tagline: "Free tapas, the Alhambra, and snow above the rooftops.",
     intro: [
@@ -486,9 +486,9 @@ export const destinations: Destination[] = [
     countrySlug: "spain",
     region: "spain",
     image:
-      "https://images.unsplash.com/photo-1680537732160-01750bae5217?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1680537732160-01750bae5217?auto=format&fit=crop&w=1400&q=85",
     heroImage:
-      "https://images.unsplash.com/photo-1680537732093-a4cde73479af?auto=format&fit=crop&w=2000&q=80",
+      "https://images.unsplash.com/photo-1680537732093-a4cde73479af?auto=format&fit=crop&w=2400&q=85",
     alt: "Alicante seen from above, with the harbour and the castle hill",
     tagline: "A castle on a rock, a palm-lined promenade, and cheap flights.",
     intro: [
@@ -554,9 +554,9 @@ export const destinations: Destination[] = [
     countrySlug: "spain",
     region: "spain",
     image:
-      "https://images.unsplash.com/photo-1662069044442-f7ca8ea67405?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1662069044442-f7ca8ea67405?auto=format&fit=crop&w=1400&q=85",
     heroImage:
-      "https://images.unsplash.com/photo-1636556590144-7e3189066277?auto=format&fit=crop&w=2000&q=80",
+      "https://images.unsplash.com/photo-1636556590144-7e3189066277?auto=format&fit=crop&w=2400&q=85",
     alt: "The titanium curves of the Guggenheim Museum beside the river in Bilbao",
     tagline: "Basque food, industrial grit and a titanium museum on the river.",
     intro: [
@@ -622,9 +622,9 @@ export const destinations: Destination[] = [
     countrySlug: "spain",
     region: "spain",
     image:
-      "https://images.unsplash.com/photo-1553455010-bdb488ac12e5?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1553455010-bdb488ac12e5?auto=format&fit=crop&w=1400&q=85",
     heroImage:
-      "https://images.unsplash.com/photo-1650894822047-71412dfaf2e4?auto=format&fit=crop&w=2000&q=80",
+      "https://images.unsplash.com/photo-1650894822047-71412dfaf2e4?auto=format&fit=crop&w=2400&q=85",
     alt: "The bay of San Sebastián with boats and the town behind",
     tagline: "A perfect shell-shaped bay and the best food in Spain.",
     intro: [
@@ -692,9 +692,9 @@ export const destinations: Destination[] = [
     countrySlug: "albania",
     region: "balkans",
     image:
-      "https://images.unsplash.com/photo-1632353913765-9b56b7b4bd55?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1632353913765-9b56b7b4bd55?auto=format&fit=crop&w=1400&q=85",
     heroImage:
-      "https://images.unsplash.com/photo-1693562142975-6a5e4b4d9039?auto=format&fit=crop&w=2000&q=80",
+      "https://images.unsplash.com/photo-1693562142975-6a5e4b4d9039?auto=format&fit=crop&w=2400&q=85",
     alt: "Skanderbeg Square in Tirana with the clock tower behind",
     tagline: "Painted facades, mountain air and Europe's best-value coffee.",
     intro: [
@@ -759,9 +759,9 @@ export const destinations: Destination[] = [
     countrySlug: "north-macedonia",
     region: "balkans",
     image:
-      "https://images.unsplash.com/photo-1653389167152-7dbd6d165631?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1653389167152-7dbd6d165631?auto=format&fit=crop&w=1400&q=85",
     heroImage:
-      "https://images.unsplash.com/photo-1618735751653-d221b2436b0e?auto=format&fit=crop&w=2000&q=80",
+      "https://images.unsplash.com/photo-1618735751653-d221b2436b0e?auto=format&fit=crop&w=2400&q=85",
     alt: "A church on a cliff above Lake Ohrid",
     tagline: "One of Europe's oldest lakes, with a town built above it.",
     intro: [
@@ -826,9 +826,9 @@ export const destinations: Destination[] = [
     countrySlug: "north-macedonia",
     region: "balkans",
     image:
-      "https://images.unsplash.com/photo-1642291373671-29794831ebce?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1642291373671-29794831ebce?auto=format&fit=crop&w=1400&q=85",
     heroImage:
-      "https://images.unsplash.com/photo-1570654672073-fc434f47e6a4?auto=format&fit=crop&w=2000&q=80",
+      "https://images.unsplash.com/photo-1570654672073-fc434f47e6a4?auto=format&fit=crop&w=2400&q=85",
     alt: "An equestrian statue on the main square of Skopje",
     tagline: "An Ottoman bazaar on one bank, marble statues on the other.",
     intro: [
@@ -894,9 +894,9 @@ export const destinations: Destination[] = [
     countrySlug: "serbia",
     region: "balkans",
     image:
-      "https://images.unsplash.com/photo-1613601740367-410ae03b2ec7?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1613601740367-410ae03b2ec7?auto=format&fit=crop&w=1400&q=85",
     heroImage:
-      "https://images.unsplash.com/photo-1706480228561-6e6ba0b5a44b?auto=format&fit=crop&w=2000&q=80",
+      "https://images.unsplash.com/photo-1706480228561-6e6ba0b5a44b?auto=format&fit=crop&w=2400&q=85",
     alt: "Belgrade's riverfront where the Sava meets the Danube",
     tagline: "Two rivers, river-barge clubs and a fortress above both.",
     intro: [
@@ -961,9 +961,9 @@ export const destinations: Destination[] = [
     countrySlug: "bosnia-herzegovina",
     region: "balkans",
     image:
-      "https://images.unsplash.com/photo-1681006129599-da712304f338?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1681006129599-da712304f338?auto=format&fit=crop&w=1400&q=85",
     heroImage:
-      "https://images.unsplash.com/photo-1636185560435-a0462ca912bb?auto=format&fit=crop&w=2000&q=80",
+      "https://images.unsplash.com/photo-1636185560435-a0462ca912bb?auto=format&fit=crop&w=2400&q=85",
     alt: "Sarajevo's rooftops with the surrounding mountains behind",
     tagline: "Where east and west meet, in a valley ringed by mountains.",
     intro: [
@@ -1028,9 +1028,9 @@ export const destinations: Destination[] = [
     countrySlug: "montenegro",
     region: "balkans",
     image:
-      "https://images.unsplash.com/photo-1664958451522-90ce9fd47b2c?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1664958451522-90ce9fd47b2c?auto=format&fit=crop&w=1400&q=85",
     heroImage:
-      "https://images.unsplash.com/photo-1615352916571-99807ec84e29?auto=format&fit=crop&w=2000&q=80",
+      "https://images.unsplash.com/photo-1615352916571-99807ec84e29?auto=format&fit=crop&w=2400&q=85",
     alt: "The town of Kotor at the head of its bay, below steep mountains",
     tagline: "A walled town at the head of a fjord-like bay.",
     intro: [
@@ -1095,9 +1095,9 @@ export const destinations: Destination[] = [
     countrySlug: "hungary",
     region: "balkans",
     image:
-      "https://images.unsplash.com/photo-1616432902940-b7a1acbc60b3?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1616432902940-b7a1acbc60b3?auto=format&fit=crop&w=1400&q=85",
     heroImage:
-      "https://images.unsplash.com/photo-1558392606-89f76d482685?auto=format&fit=crop&w=2000&q=80",
+      "https://images.unsplash.com/photo-1558392606-89f76d482685?auto=format&fit=crop&w=2400&q=85",
     alt: "The Hungarian Parliament Building on the banks of the Danube",
     tagline: "Thermal baths, ruin bars and the grandest river in Europe.",
     intro: [

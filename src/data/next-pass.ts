@@ -4,9 +4,9 @@
  *
  * PRODUCT MODEL: NEXT PASS is DIGITAL. Each partner hostel has its own
  * NEXT STOP QR code, displayed at reception. A traveller scans it with their
- * phone, a NEXT STOP mobile web page opens, and a unique digital pass code is
- * generated and shown on their phone. There is no app, no physical card and
- * no membership. The QR carries the partner/referral identifier, so the
+ * phone, NEXT STOP opens on that phone, and a unique digital pass code is
+ * generated and shown there. There is no physical card and no
+ * membership. The QR carries the partner/referral identifier, so the
  * originating hostel is recorded on the pass and credited for the onward
  * booking.
  *
@@ -28,6 +28,11 @@ export type NextPassStep = {
   icon: StepIcon;
   title: string;
   description: string;
+  /**
+   * Turns a phrase inside `description` into a link wherever the step is
+   * rendered, so the wording stays in one place.
+   */
+  descriptionLink?: { text: string; href: string };
   /** Longer explanation used on /how-it-works. */
   detail: string[];
   /** Practical notes shown beside the step. */
@@ -40,10 +45,15 @@ export const nextPassSteps: NextPassStep[] = [
     label: "Stay",
     icon: "backpack",
     title: "Stay at a partner hostel",
-    description: "Stay at a NEXT STOP partner hostel.",
+    description:
+      "Stay at a NEXT STOP partner hostel. Whether you booked elsewhere or used your Starter NEXT PASS.",
+    descriptionLink: {
+      text: "Starter NEXT PASS",
+      href: "/next-pass/first-pass",
+    },
     detail: [
-      "Everything starts with a stay. Book a NEXT STOP partner hostel however you normally would, arrive, and check in as usual.",
-      "There is nothing to sign up for in advance and nothing to install before you travel. Being a guest is the only entry requirement.",
+      "Everything starts with a stay. Book a NEXT STOP partner hostel with a Starter NEXT PASS or however you normally would, arrive, and check in as usual.",
+      "There is nothing to sign up for in advance and nothing to arrange before you travel. Being a guest is the only entry requirement.",
     ],
     notes: [
       "Any partner hostel in any country counts",
@@ -55,13 +65,14 @@ export const nextPassSteps: NextPassStep[] = [
     label: "Scan",
     icon: "scan",
     title: "Scan the QR code at reception",
-    description: "Scan the NEXT STOP QR code at reception.",
+    description:
+      "Scan the NEXT STOP QR code in order to obtain your free NEXT PASS.",
     detail: [
       "Every partner hostel has its own NEXT STOP QR code on display at reception. Point your phone camera at it — that is the whole interaction.",
       "The QR carries that hostel's identifier, which is how the network knows where your journey continued from.",
     ],
     notes: [
-      "Your phone camera is enough — no app to install",
+      "Your phone camera is all you need",
       "Each hostel has its own unique QR code",
     ],
   },
@@ -72,12 +83,12 @@ export const nextPassSteps: NextPassStep[] = [
     title: "Get your digital NEXT PASS",
     description: "Your unique digital NEXT PASS code is generated instantly.",
     detail: [
-      "The QR opens a NEXT STOP page in your phone's browser. A short flow generates a unique NEXT PASS code and shows it on screen straight away.",
+      "Scanning opens NEXT STOP on your phone. A short flow generates a unique NEXT PASS code and shows it on screen straight away.",
       "The pass lives on your phone. Nothing is printed, nothing is handed over, and there is no membership to manage.",
     ],
     notes: [
       "A unique code, shown on your phone",
-      "No app, no physical card, no registration to work through",
+      "No physical card and no registration to work through",
     ],
   },
   {
@@ -88,12 +99,8 @@ export const nextPassSteps: NextPassStep[] = [
     description: "Choose your next destination and participating hostel.",
     detail: [
       "With a pass active, browse where you could go next. Every hostel listed is a partner in the same network, with prices, ratings and the neighbourhood shown up front.",
-      "Destination pages carry the practical things reception would tell you: what a bed costs, how to get there and which cities pair well with the one you are in.",
     ],
-    notes: [
-      "Suggested onward cities on every destination page",
-      "Routes group cities into ready-made itineraries",
-    ],
+    notes: [],
   },
   {
     step: 5,
@@ -103,13 +110,10 @@ export const nextPassSteps: NextPassStep[] = [
     description:
       "Use your NEXT PASS code to unlock the available partner benefit.",
     detail: [
-      "Enter your NEXT PASS code when you book. It unlocks the partner's direct rate — the price the hostel sets when it is not paying a platform commission.",
-      "You book with the hostel rather than through a marketplace, which is what makes the lower price possible in the first place.",
+      "Enter your NEXT PASS code when you book. It unlocks the partner's NEXT STOP rate.",
+      "Your booking is directly communicated with the hostel and NEXT STOP will not charge a large booking fee. Instead we reward your current hostel with a significant commission and use a small percentage to improve our backpackers eco-system.",
     ],
-    notes: [
-      "The direct rate is set by the hostel, not by NEXT STOP",
-      "You see both prices before you commit",
-    ],
+    notes: ["You see both prices before you commit"],
   },
   {
     step: 6,
@@ -123,8 +127,8 @@ export const nextPassSteps: NextPassStep[] = [
       "That is the whole idea. The network follows the journey instead of ending at checkout.",
     ],
     notes: [
-      "Each stay can begin the next hop",
-      "The hostel whose QR you scanned is credited for the onward booking",
+      "Each stay will trigger your NEXT STOP",
+      "The hostel whose QR you scanned is rewarded for the onward booking",
     ],
   },
 ];
@@ -154,7 +158,8 @@ export const homeJourney: JourneyBeat[] = [
     label: "Scan",
     icon: "scan",
     title: "Scan the QR code",
-    description: "Reception has a NEXT STOP QR code. Scan it with your phone.",
+    description:
+      "Ready to move on? Scan the NEXT PASS QR code at the reception with your phone.",
   },
   {
     step: 3,
@@ -168,14 +173,14 @@ export const homeJourney: JourneyBeat[] = [
     label: "Book",
     icon: "calendar",
     title: "Book your next stop",
-    description: "Use the code to unlock the partner rate at your next city.",
+    description: "Use the code to unlock the partner rate at your NEXT STOP.",
   },
   {
     step: 5,
     label: "Continue",
     icon: "flag",
     title: "Continue your journey",
-    description: "Arrive, scan again, and keep moving through the network.",
+    description: "Arrive, scan again, and save at every stop across the network.",
   },
 ];
 
@@ -201,7 +206,11 @@ export const samplePass = {
   issuedHostelSlug: "casa-naranja-valencia",
 };
 
-export type PartnerPerkIcon = "bookings" | "globe" | "community";
+export type PartnerPerkIcon =
+  | "profit"
+  | "globe"
+  | "community"
+  | "ecosystem";
 
 export type PartnerPerk = {
   icon: PartnerPerkIcon;
@@ -209,9 +218,10 @@ export type PartnerPerk = {
 };
 
 export const partnerPerks: PartnerPerk[] = [
-  { icon: "bookings", label: "More bookings" },
+  { icon: "profit", label: "More profit" },
   { icon: "globe", label: "Global exposure" },
   { icon: "community", label: "Trusted community" },
+  { icon: "ecosystem", label: "One connected ecosystem" },
 ];
 
 /* ---------- /next-pass ---------- */
@@ -227,7 +237,8 @@ export type IconKey =
   | "clock"
   | "check"
   | "scan"
-  | "phone";
+  | "phone"
+  | "hostels";
 
 export type ValueItem = {
   icon: IconKey;
@@ -240,7 +251,7 @@ export const travellerReasons: ValueItem[] = [
     icon: "euro",
     title: "A better price at the next hostel",
     description:
-      "The code unlocks the hostel's own direct rate instead of a marketplace rate, so the saving comes out of commission rather than out of the hostel.",
+      "The code unlocks the hostel's own NEXT STOP rate instead of a marketplace rate, so the saving comes out of the booking fee rather than out of the hostel.",
   },
   {
     icon: "shield",
@@ -256,30 +267,30 @@ export const travellerReasons: ValueItem[] = [
   },
   {
     icon: "phone",
-    title: "Nothing to install, nothing to carry",
+    title: "Nothing to carry, nothing to lose",
     description:
-      "Scanning the QR opens a web page, not an app store. The pass sits on your phone with no account, no card and nothing to keep track of.",
+      "Scanning the QR code puts the pass straight onto your phone. Nothing to print, nothing to keep in a pocket and nothing to remember at the next desk.",
   },
 ];
 
 export const networkPoints: ValueItem[] = [
   {
-    icon: "users",
+    icon: "hostels",
     title: "Hostels recommend hostels",
     description:
-      "Partners know which places in the next city actually look after travellers. The network is built on those recommendations rather than on advertising spend.",
+      "Some of our partners know which hostels at the next destination are really worth it. The network is built on those recommendations — and by referring to each other inside our backpacker ecosystem, they get rewarded.",
   },
   {
     icon: "route",
     title: "The journey is the product",
     description:
-      "Most booking platforms optimise a single night. NEXT STOP is built around the fact that backpackers move on, usually within a week.",
+      "Most booking platforms focus on individual stays. NEXT STOP is built around the way backpackers actually travel: moving from hostel to hostel, discovering new destinations, and making each stop part of a bigger journey.",
   },
   {
     icon: "scan",
     title: "One QR code per hostel",
     description:
-      "The code at reception identifies the hostel, so the pass it generates carries where the journey continued from — without anyone typing anything in.",
+      "The QR code at reception links your NEXT PASS to the hostel where you received it, so NEXT STOP can reward the hostels that keep backpackers moving within our community. Our main goal is to save all of us from the extreme booking fees charged by major platforms.",
   },
 ];
 
@@ -300,7 +311,7 @@ export const exampleJourney: JourneyStep[] = [
     city: "Alicante",
     country: "Spain",
     action:
-      "You use the code to book the partner hostel's direct rate, and travel down the coast.",
+      "You use the code to book the partner hostel's NEXT STOP rate, and travel down the coast.",
   },
   {
     city: "Málaga",
@@ -331,7 +342,7 @@ export const savingsExample: SavingsRow[] = [
 export const faqPreviewIds = [
   "what-is-next-pass",
   "how-do-i-get-one",
-  "do-i-need-an-app",
+  "is-it-a-card",
   "how-long-is-it-valid",
 ];
 
@@ -342,7 +353,7 @@ export const travellerBenefits: ValueItem[] = [
     icon: "euro",
     title: "Better hostel prices",
     description:
-      "Partner hostels set a direct rate for NEXT PASS holders that sits below the price they list on commission-based platforms.",
+      "Partner hostels set a NEXT STOP rate for NEXT PASS holders that sits below the price they have to list on the big booking platforms.",
   },
   {
     icon: "shield",
@@ -372,7 +383,7 @@ export const travellerBenefits: ValueItem[] = [
     icon: "phone",
     title: "Digital, not another card in your wallet",
     description:
-      "The pass lives on your phone. No app to install, no physical card to lose and no membership to manage.",
+      "The pass lives on your phone. No physical card to lose and no membership to manage.",
   },
   {
     icon: "route",
@@ -391,7 +402,7 @@ export type ComparisonRow = {
 export const travellerComparison: ComparisonRow[] = [
   {
     aspect: "Who you book with",
-    regular: "A marketplace that takes a commission from the hostel",
+    regular: "A marketplace charging the hostel a high booking fee",
     nextPass: "The hostel directly, using a code from another partner",
   },
   {
@@ -406,8 +417,8 @@ export const travellerComparison: ComparisonRow[] = [
   },
   {
     aspect: "What you carry",
-    regular: "An app and a login",
-    nextPass: "A digital pass on your phone; nothing to install or print",
+    regular: "A booking reference, and nothing once the stay is over",
+    nextPass: "A pass on your phone that already points at the next stop",
   },
   {
     aspect: "What happens after checkout",

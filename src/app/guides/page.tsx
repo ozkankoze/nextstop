@@ -9,7 +9,7 @@ import { ButtonLink } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Misc";
 import { ArrowRightIcon, CalendarIcon, ClockIcon } from "@/components/ui/Icons";
 import { guides } from "@/data/guides";
-import { getDestination } from "@/data/destinations";
+import { vibes } from "@/data/vibes";
 
 export const metadata: Metadata = {
   title: "Travel Guides",
@@ -18,7 +18,6 @@ export const metadata: Metadata = {
 };
 
 export default function GuidesPage() {
-  const heroDestination = getDestination("granada");
   const featured = guides[0];
   const categoryCount = new Set(guides.map((guide) => guide.category)).size;
 
@@ -28,8 +27,8 @@ export default function GuidesPage() {
         eyebrow="Travel Guides"
         title="Travel smarter."
         accent="Go further."
-        image={heroDestination?.heroImage}
-        imageAlt={heroDestination?.alt}
+        image={vibes.rockyTrailGroup.src}
+        imageAlt={vibes.rockyTrailGroup.alt}
         subtitle={
           <>
             {guides.length} guides across {categoryCount} topics — what a day

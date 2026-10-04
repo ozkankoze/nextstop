@@ -204,7 +204,7 @@ export const guides: Guide[] = [
         heading: "Where the bed money goes",
         body: [
           "Dorm prices swing hard by season and by festival. The same bed in Valencia can be €15 in November and €35 during Las Fallas. If your dates are flexible, shoulder season — April to June, September to October — is the sweet spot for both price and weather.",
-          "A NEXT PASS from a partner hostel unlocks the direct rate at the next partner, which is where the network saves you money on a multi-city trip rather than a single stay.",
+          "A NEXT PASS from a partner hostel unlocks the NEXT STOP rate at the next partner, which is where the network saves you money on a multi-city trip rather than a single stay.",
         ],
       },
     ],
@@ -258,7 +258,7 @@ export const guides: Guide[] = [
         id: "founding-partners",
         heading: "The founding partners in Valencia",
         body: [
-          "The first hostels to join the NEXT STOP network are all in Valencia, spread across the three neighbourhoods above. Arriving with a NEXT PASS from any partner hostel unlocks the direct rate at each of them.",
+          "The first hostels to join the NEXT STOP network are all in Valencia, spread across the three neighbourhoods above. Arriving with a NEXT PASS from any partner hostel unlocks the NEXT STOP rate at each of them.",
         ],
       },
     ],

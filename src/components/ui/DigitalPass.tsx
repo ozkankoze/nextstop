@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { LogoImage } from "@/components/ui/Logo";
+import { PassWordmark, Perforation } from "@/components/ui/PassTicket";
 import {
   ArrowRightIcon,
   CheckCircleIcon,
@@ -27,7 +28,7 @@ export function PhoneFrame({
 }) {
   return (
     <div
-      className={`relative w-[248px] rounded-[2.1rem] border border-white/12 bg-ink-800 p-2.5 shadow-[0_28px_60px_-28px_rgba(6,9,15,0.85)] ${className}`}
+      className={`relative w-[252px] rounded-[2.1rem] border border-white/12 bg-ink-800 p-2.5 shadow-[0_28px_60px_-28px_rgba(6,9,15,0.85)] ${className}`}
     >
       <span
         aria-hidden
@@ -58,7 +59,10 @@ type DigitalPassProps = {
   withActions?: boolean;
 };
 
-/** The NEXT PASS screen itself. Always render it inside a `PhoneFrame`. */
+/**
+ * The NEXT PASS itself, styled as a ticket stub so it matches the QR ticket at
+ * reception. Always render it inside a `PhoneFrame`.
+ */
 export function DigitalPassScreen({
   code = samplePass.code,
   city = samplePass.issuedCity,
@@ -67,7 +71,7 @@ export function DigitalPassScreen({
   withActions = true,
 }: DigitalPassProps) {
   return (
-    <div className="px-4">
+    <div className="px-5">
       <div className="flex items-center justify-between">
         <LogoImage variant="compact" height={18} />
         <span className="inline-flex items-center gap-1 rounded-full bg-white/10 px-2 py-0.5 text-[9px] font-semibold tracking-[0.12em] text-white uppercase">
@@ -76,27 +80,28 @@ export function DigitalPassScreen({
         </span>
       </div>
 
-      <p className="mt-5 text-[10px] font-semibold tracking-[0.28em] text-white/45 uppercase">
-        Next Pass
-      </p>
+      <div className="mt-5 text-center">
+        <PassWordmark className="text-[26px]" />
+      </div>
 
-      <p className="mt-2 font-display text-[22px] leading-none font-extrabold tracking-[0.04em] text-white">
+      <Perforation notches={false} />
+
+      <p className="text-center text-[10px] tracking-[0.22em] text-white/40 uppercase">
+        Your code
+      </p>
+      <p className="mt-1.5 text-center font-display text-[21px] leading-none font-extrabold tracking-[0.04em] text-white">
         {code}
       </p>
 
-      <div className="mt-4 border-t border-dashed border-white/12 pt-3">
-        <p className="text-[10px] tracking-[0.14em] text-white/40 uppercase">
+      <div className="mt-4 rounded-lg bg-white/5 px-3 py-2.5 text-center">
+        <p className="text-[9.5px] tracking-[0.16em] text-white/40 uppercase">
           Issued from
         </p>
-        <p className="mt-1 inline-flex items-center gap-1.5 text-[12.5px] font-medium text-white">
+        <p className="mt-1 inline-flex items-center gap-1.5 text-[12px] font-medium text-white">
           <MapPinIcon aria-hidden className="h-3.5 w-3.5 text-brand-500" />
           {city}, {country}
         </p>
       </div>
-
-      <p className="mt-4 text-[12px] leading-relaxed text-white/60">
-        Your next stop awaits.
-      </p>
 
       {withActions ? (
         <div className="mt-4">
@@ -112,7 +117,11 @@ export function DigitalPassScreen({
             Save pass to your phone
           </p>
         </div>
-      ) : null}
+      ) : (
+        <p className="mt-4 text-center text-[11.5px] text-white/55">
+          Your next stop awaits.
+        </p>
+      )}
     </div>
   );
 }

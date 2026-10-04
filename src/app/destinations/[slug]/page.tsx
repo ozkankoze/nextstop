@@ -4,24 +4,24 @@ import { PageHero } from "@/components/ui/PageHero";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { HostelCard } from "@/components/cards/HostelCard";
 import { DestinationCard } from "@/components/cards/DestinationCard";
-import { RouteCard } from "@/components/cards/RouteCard";
 import { GuideCard } from "@/components/cards/GuideCard";
 import { ButtonLink } from "@/components/ui/Button";
 import { Badge, DemoNote, EmptyState } from "@/components/ui/Misc";
 import {
   ArrowRightIcon,
+  BedDoubleIcon,
+  BedSingleIcon,
   CheckIcon,
   CompassIcon,
   SparklesIcon,
-  SunIcon,
 } from "@/components/ui/Icons";
+import { LogoImage } from "@/components/ui/Logo";
 import {
   destinations,
   getDestination,
   getDestinations,
 } from "@/data/destinations";
 import { getHostelsByDestination } from "@/data/hostels";
-import { getRoutes, getRoutesForDestination } from "@/data/routes";
 import { getGuidesForDestination } from "@/data/guides";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -48,10 +48,6 @@ export default async function DestinationPage({ params }: Props) {
 
   const cityHostels = getHostelsByDestination(destination.slug);
   const onward = getDestinations(destination.onward);
-  const routes = [
-    ...getRoutes(destination.routeSlugs),
-    ...getRoutesForDestination(destination.slug),
-  ].filter((route, index, all) => all.findIndex((r) => r.slug === route.slug) === index);
   const guides = getGuidesForDestination(destination.slug).slice(0, 3);
   const averageSaving = cityHostels.length
     ? Math.round(
@@ -158,9 +154,9 @@ export default async function DestinationPage({ params }: Props) {
       >
         <SectionHeading
           id="city-hostels"
-          title="Founding Partner Hostels in"
-          accent={destination.city}
-          subtitle="Book any of these with a NEXT PASS to unlock the hostel's direct rate."
+          title="Founding Partner Hostels"
+          accent={`in ${destination.city}`}
+          subtitle="Book any of these with a NEXT PASS to unlock the hostel's NEXT STOP rate."
           action={{ label: "View all hostels", href: "/hostels" }}
         />
 
@@ -254,27 +250,37 @@ export default async function DestinationPage({ params }: Props) {
       >
         <SectionHeading
           id="city-prices"
-          title="What a bed costs in"
-          accent={destination.city}
+          title="What a bed costs"
+          accent={`in ${destination.city}`}
         />
         <div className="grid gap-5 sm:grid-cols-3">
           <PriceStat
             label="Dorm bed"
             value={`€${destination.avgDormPrice}`}
             note="Average across partner hostels, per night"
+            icon={<BedSingleIcon aria-hidden className="h-4 w-4 text-brand-500" />}
           />
           <PriceStat
             label="Private room"
             value={`€${destination.avgPrivatePrice}`}
             note="Two people sharing, per night"
+            icon={<BedDoubleIcon aria-hidden className="h-4 w-4 text-brand-500" />}
           />
           <PriceStat
             label="Average NEXT PASS saving"
             value={averageSaving > 0 ? `€${averageSaving}` : "—"}
             note={
               averageSaving > 0
-                ? "Per night, versus the regular rate at partner hostels here"
-                : "No partner hostels in this city yet"
+                ? "Per night, compared with standard rates on major booking platforms."
+                : "No partner hostels here yet"
+            }
+            icon={
+              <span
+                aria-hidden
+                className="grid h-5 w-5 shrink-0 place-items-center rounded bg-ink-900"
+              >
+                <LogoImage variant="mark" height={10} />
+              </span>
             }
             highlight
           />
@@ -302,28 +308,6 @@ export default async function DestinationPage({ params }: Props) {
             {onward.map((item) => (
               <li key={item.slug}>
                 <DestinationCard destination={item} variant="full" />
-              </li>
-            ))}
-          </ul>
-        </section>
-      ) : null}
-
-      {/* Routes */}
-      {routes.length > 0 ? (
-        <section
-          aria-labelledby="city-routes"
-          className="container-page pt-12 lg:pt-14"
-        >
-          <SectionHeading
-            id="city-routes"
-            title="Routes through"
-            accent={destination.city}
-            action={{ label: "View all routes", href: "/routes" }}
-          />
-          <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {routes.map((route) => (
-              <li key={route.slug}>
-                <RouteCard route={route} />
               </li>
             ))}
           </ul>
@@ -361,7 +345,7 @@ export default async function DestinationPage({ params }: Props) {
           </h2>
           <p className="mt-3 max-w-[56ch] text-[13.5px] leading-relaxed text-white/70">
             Scan the NEXT STOP QR code at reception. Your digital NEXT PASS
-            appears on your phone, and the code unlocks direct booking at any
+            appears on your phone, and the code unlocks NEXT STOP booking at any
             partner hostel in {destination.city}.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
@@ -383,11 +367,13 @@ function PriceStat({
   label,
   value,
   note,
+  icon,
   highlight = false,
 }: {
   label: string;
   value: string;
   note: string;
+  icon: React.ReactNode;
   highlight?: boolean;
 }) {
   return (
@@ -399,7 +385,7 @@ function PriceStat({
       }`}
     >
       <p className="flex items-center gap-2 text-[12px] text-ink-500">
-        <SunIcon aria-hidden className="h-4 w-4 text-brand-500" />
+        {icon}
         {label}
       </p>
       <p

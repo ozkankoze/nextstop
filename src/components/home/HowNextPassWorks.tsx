@@ -30,7 +30,7 @@ export function HowNextPassWorks() {
         title="How"
         accent="NEXT PASS"
         titleAfter="Works"
-        subtitle="Scan the QR code at reception and your digital pass appears on your phone. No app, no card."
+        subtitle="Scan the QR code at reception and your digital pass appears on your phone, ready for the next city."
       />
 
       <ol className="mt-8 grid gap-8 lg:grid-cols-5 lg:gap-4">

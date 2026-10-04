@@ -65,6 +65,10 @@ export type Hostel = {
   regularPrice: number;
   /** Nightly dorm price unlocked with a NEXT PASS, in EUR. */
   nextStopPrice: number;
+  /** Walking distance to the city/town centre, in km. */
+  distanceToCentreKm: number;
+  /** Distance to the nearest beach or lakeshore, in km; null when inland. */
+  distanceToBeachKm: number | null;
   images: string[];
   alt: string;
   summary: string;
@@ -77,7 +81,7 @@ export type Hostel = {
   featured?: boolean;
 };
 
-const img = (id: string, w = 900) =>
+const img = (id: string, w = 1400) =>
   `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=80`;
 
 /** Shared interior shots used to round out each gallery. */
@@ -123,6 +127,8 @@ export const hostels: Hostel[] = [
     reviewCount: 412,
     regularPrice: 20,
     nextStopPrice: 17,
+    distanceToCentreKm: 0.4,
+    distanceToBeachKm: 4.2,
     images: [gallery.courtyard, gallery.brickCommon, gallery.sunlitDorm, gallery.woodTables],
     alt: "Leafy hostel courtyard with wooden tables and orange trees",
     summary:
@@ -175,6 +181,8 @@ export const hostels: Hostel[] = [
     reviewCount: 287,
     regularPrice: 19,
     nextStopPrice: 16,
+    distanceToCentreKm: 1.2,
+    distanceToBeachKm: 3.8,
     images: [gallery.stringLights, gallery.woodTables, gallery.sunlitDorm, gallery.patioBar],
     alt: "Cosy hostel lounge with string lights above a shared dining area",
     summary:
@@ -220,6 +228,8 @@ export const hostels: Hostel[] = [
     reviewCount: 233,
     regularPrice: 21,
     nextStopPrice: 18,
+    distanceToCentreKm: 3.6,
+    distanceToBeachKm: 0.2,
     images: [gallery.patioBar, gallery.outdoorLounge, gallery.umbrellas, gallery.sunlitDorm],
     alt: "Sunlit hostel patio with tables, chairs and a small bar",
     summary:
@@ -265,6 +275,8 @@ export const hostels: Hostel[] = [
     reviewCount: 356,
     regularPrice: 18,
     nextStopPrice: 15,
+    distanceToCentreKm: 0.3,
+    distanceToBeachKm: 4.5,
     images: [gallery.brickCommon, gallery.woodTables, gallery.bunkWindow, gallery.courtyard],
     alt: "Long wooden table and black chairs in a brick-walled common room",
     summary:
@@ -310,6 +322,8 @@ export const hostels: Hostel[] = [
     reviewCount: 521,
     regularPrice: 29,
     nextStopPrice: 25,
+    distanceToCentreKm: 2.4,
+    distanceToBeachKm: 4.0,
     images: [gallery.rooftop, gallery.outdoorLounge, gallery.sunlitDorm, gallery.woodTables],
     alt: "Rooftop terrace lounge looking out over the city at dusk",
     summary:
@@ -355,6 +369,8 @@ export const hostels: Hostel[] = [
     reviewCount: 604,
     regularPrice: 26,
     nextStopPrice: 22,
+    distanceToCentreKm: 0.6,
+    distanceToBeachKm: 1.6,
     images: [gallery.outdoorLounge, gallery.patioBar, gallery.bunkWindow, gallery.brickCommon],
     alt: "Modern outdoor lounge area with a bar and hanging plants",
     summary: "A loud, friendly hostel five minutes from Las Ramblas and the MACBA.",
@@ -398,6 +414,8 @@ export const hostels: Hostel[] = [
     reviewCount: 318,
     regularPrice: 25,
     nextStopPrice: 21,
+    distanceToCentreKm: 1.1,
+    distanceToBeachKm: null,
     images: [gallery.woodTables, gallery.brickCommon, gallery.sunlitDorm, gallery.deskLamp],
     alt: "Bright hostel common room with a long wooden table and chairs",
     summary:
@@ -442,6 +460,8 @@ export const hostels: Hostel[] = [
     reviewCount: 241,
     regularPrice: 22,
     nextStopPrice: 19,
+    distanceToCentreKm: 1.4,
+    distanceToBeachKm: null,
     images: [gallery.sunlitDorm, gallery.foosball, gallery.woodTables, gallery.bookshelf],
     alt: "Bunk beds in a bright dormitory with sunlight coming through the window",
     summary:
@@ -486,6 +506,8 @@ export const hostels: Hostel[] = [
     reviewCount: 274,
     regularPrice: 21,
     nextStopPrice: 18,
+    distanceToCentreKm: 1.3,
+    distanceToBeachKm: null,
     images: [gallery.palmShelf, gallery.courtyard, gallery.umbrellas, gallery.woodTables],
     alt: "Shaded hostel patio with palms and tiled walls",
     summary:
@@ -530,6 +552,8 @@ export const hostels: Hostel[] = [
     reviewCount: 196,
     regularPrice: 20,
     nextStopPrice: 17,
+    distanceToCentreKm: 1.0,
+    distanceToBeachKm: 0.3,
     images: [gallery.poolTables, gallery.patioBar, gallery.outdoorLounge, gallery.sunlitDorm],
     alt: "Hostel terrace with wooden tables and chairs beside a small pool",
     summary: "A short walk from both the city beach and the Alcazaba, with a small pool.",
@@ -573,6 +597,8 @@ export const hostels: Hostel[] = [
     reviewCount: 389,
     regularPrice: 19,
     nextStopPrice: 16,
+    distanceToCentreKm: 1.1,
+    distanceToBeachKm: null,
     images: [gallery.umbrellas, gallery.greenRoof, gallery.courtyard, gallery.bunkWindow],
     alt: "Rooftop patio with tables, chairs and umbrellas overlooking the town",
     summary:
@@ -618,6 +644,8 @@ export const hostels: Hostel[] = [
     reviewCount: 164,
     regularPrice: 18,
     nextStopPrice: 15,
+    distanceToCentreKm: 0.3,
+    distanceToBeachKm: 0.25,
     images: [gallery.greenRoof, gallery.patioBar, gallery.woodTables, gallery.sunlitDorm],
     alt: "Rooftop terrace overlooking the old town rooftops",
     summary:
@@ -662,6 +690,8 @@ export const hostels: Hostel[] = [
     reviewCount: 208,
     regularPrice: 16,
     nextStopPrice: 13,
+    distanceToCentreKm: 0.2,
+    distanceToBeachKm: 0.3,
     images: [gallery.bunkWindow, gallery.courtyard, gallery.woodTables, gallery.wicker],
     alt: "Dormitory with bunk beds beside a large window overlooking the lake",
     summary: "A stone house in the old town with lake views from the upper dorms.",
@@ -705,6 +735,8 @@ export const hostels: Hostel[] = [
     reviewCount: 447,
     regularPrice: 18,
     nextStopPrice: 15,
+    distanceToCentreKm: 1.0,
+    distanceToBeachKm: 2.8,
     images: [gallery.bookshelf, gallery.brickCommon, gallery.woodTables, gallery.foosball],
     alt: "Reading corner with an armchair and a bookshelf in a hostel common room",
     summary:
@@ -749,6 +781,8 @@ export const hostels: Hostel[] = [
     reviewCount: 362,
     regularPrice: 16,
     nextStopPrice: 13,
+    distanceToCentreKm: 0.3,
+    distanceToBeachKm: null,
     images: [gallery.wicker, gallery.diners, gallery.woodTables, gallery.bunkWindow],
     alt: "Hostel lounge with wicker armchairs and low tables",
     summary:
@@ -793,6 +827,8 @@ export const hostels: Hostel[] = [
     reviewCount: 298,
     regularPrice: 14,
     nextStopPrice: 11,
+    distanceToCentreKm: 1.3,
+    distanceToBeachKm: null,
     images: [gallery.diners, gallery.courtyard, gallery.patioBar, gallery.sunlitDorm],
     alt: "Guests eating together at long tables in a colourful hostel common room",
     summary:

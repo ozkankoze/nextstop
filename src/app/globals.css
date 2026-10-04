@@ -31,8 +31,9 @@
   --color-ink-50: #f4f6f9;
 
   --color-canvas: #fbfbfd;
-  --color-save: #b4790a;
-  --color-save-bg: #fdf3d8;
+  /* Savings are always shown in green, on every surface that mentions them. */
+  --color-save: #0d7a41;
+  --color-save-bg: #e4f6ea;
 }
 
 @layer base {

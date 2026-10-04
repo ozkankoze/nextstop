@@ -275,7 +275,7 @@ export function PartnerApplicationForm() {
         <Field
           label="Phone / WhatsApp"
           htmlFor={fieldId("phone")}
-          hint="Optional, but it is usually the fastest way to reach a reception."
+          hint="Optional, but it is usually the fastest way to get in touch."
         >
           <TextInput
             id={fieldId("phone")}
@@ -313,7 +313,6 @@ export function PartnerApplicationForm() {
           label="Message"
           htmlFor={fieldId("message")}
           className="sm:col-span-2"
-          hint="Anything that helps: the neighbourhood, who stays with you, which cities your guests head to next."
         >
           <TextArea
             id={fieldId("message")}
@@ -321,7 +320,7 @@ export function PartnerApplicationForm() {
             rows={5}
             value={values.message}
             onChange={update("message")}
-            placeholder="Tell us about the hostel and why the network would suit your guests."
+            placeholder="Free space for you to leave a note."
           />
         </Field>
       </div>

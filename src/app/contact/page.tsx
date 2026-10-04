@@ -121,7 +121,7 @@ export default function ContactPage() {
           </h2>
           <p className="mt-3 max-w-[56ch] text-[13.5px] leading-relaxed text-white/70">
             The partner page explains how the network works from your side of
-            the reception desk — direct bookings, credit for the guests you send
+            the reception desk — NEXT STOP bookings, credit for the guests you send
             on, and pricing you keep control of — and the application asks for
             everything we need in one pass.
           </p>

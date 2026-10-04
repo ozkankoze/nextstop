@@ -63,6 +63,12 @@ export function HostelCard({
         <p className="mt-0.5 text-[12px] text-ink-500">
           {hostel.city}, {hostel.country}
         </p>
+        <p className="mt-1.5 text-[11px] text-ink-400">
+          {hostel.distanceToCentreKm} km to centre
+          {hostel.distanceToBeachKm !== null
+            ? ` · ${hostel.distanceToBeachKm} km to beach`
+            : ""}
+        </p>
 
         <div className="mt-4">
           <PriceCompare

@@ -262,8 +262,9 @@ export default async function HostelPage({ params }: Props) {
               <p className="mt-3 text-[13px] leading-relaxed text-ink-600">
                 Scan the NEXT STOP QR code at the partner hostel you are
                 staying at now. The digital pass it puts on your phone unlocks{" "}
-                {hostel.name}&apos;s direct rate — {euro(savings)} less per night
-                than the regular price, because the booking skips the commission.
+                {hostel.name}&apos;s NEXT STOP rate — {euro(savings)} less per night
+                than the regular price, because the booking skips the big platforms&rsquo;
+                booking fees.
               </p>
               <Link
                 href="/next-pass"

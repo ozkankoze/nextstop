@@ -33,6 +33,7 @@ export const footerColumns: FooterColumn[] = [
     title: "Next Pass",
     links: [
       { label: "What is NEXT PASS?", href: "/next-pass" },
+      { label: "Get your first pass", href: "/next-pass/first-pass" },
       { label: "How it Works", href: "/how-it-works" },
       { label: "Benefits", href: "/next-pass/benefits" },
       { label: "FAQs", href: "/faq" },

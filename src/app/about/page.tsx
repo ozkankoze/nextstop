@@ -1,25 +1,25 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { PageHero } from "@/components/ui/PageHero";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ButtonLink } from "@/components/ui/Button";
 import { Badge, DemoNote, SpecRow, ValueCard } from "@/components/ui/Misc";
 import { ScanFlow } from "@/components/sections/ScanFlow";
+import { NetworkWorldGraphic } from "@/components/ui/NetworkWorldGraphic";
 import {
   ArrowRightIcon,
   CheckIcon,
   HandshakeIcon,
   SparklesIcon,
 } from "@/components/ui/Icons";
-import { destinations, getDestination } from "@/data/destinations";
+import { destinations } from "@/data/destinations";
 import { hostels } from "@/data/hostels";
 import { nextPassSteps } from "@/data/next-pass";
-import { siteTagline } from "@/data/site";
+import { vibes } from "@/data/vibes";
 
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Why NEXT STOP exists: a hostel-to-hostel network that keeps bookings direct, keeps commission out of the room rate, and follows the traveller from one city to the next.",
+    "Why NEXT STOP exists: a hostel-to-hostel network that keeps bookings in the network, keeps big platform fees out of the room rate, and follows the traveller from one city to the next.",
 };
 
 /* Counts are derived from the catalogue so the page never drifts from the data. */
@@ -29,18 +29,17 @@ const spainDestinations = destinations.filter(
 ).length;
 const balkanDestinations = totalDestinations - spainDestinations;
 const partnerHostels = hostels.length;
+const foundingPartnerHostels = hostels.filter((hostel) => hostel.featured)
+  .length;
 const hostelCities = new Set(hostels.map((hostel) => hostel.destinationSlug))
   .size;
-
-const heroDestination = getDestination("valencia");
-const missionDestination = getDestination("granada");
 
 const travellerBenefits = [
   {
     icon: "euro",
     title: "The hostel's own price",
     description:
-      "A pass code unlocks the direct rate a hostel sets when it is not handing a commission to a marketplace. The saving comes out of the fee, not out of the hostel.",
+      "A pass code unlocks the NEXT STOP rate a hostel can offer when it is not paying a big platform's booking fees. The saving comes out of the fee, not out of the hostel.",
   },
   {
     icon: "shield",
@@ -56,9 +55,9 @@ const travellerBenefits = [
   },
   {
     icon: "phone",
-    title: "Nothing to join, nothing to install",
+    title: "Nothing to join, nothing to carry",
     description:
-      "Scan the QR code at reception and the pass appears on your phone. No app, no membership, no account to create and nothing that renews once you fly home.",
+      "Scan the QR code at reception and the pass appears on your phone. No membership, no account to create and nothing that renews once you fly home.",
   },
 ];
 
@@ -85,7 +84,7 @@ const hostelBenefits = [
     icon: "euro",
     title: "Pricing you still control",
     description:
-      "You set the direct rate and your own house rules. NEXT STOP lists the hostel and passes the guest along; it does not take over your inventory.",
+      "You set the NEXT STOP rate and your own house rules. NEXT STOP lists the hostel and passes the guest along; it does not take over your inventory.",
   },
 ];
 
@@ -102,11 +101,11 @@ export default function AboutPage() {
       <PageHero
         size="lg"
         eyebrow="About NEXT STOP"
-        title="Travel shouldn't end at"
-        accent="checkout."
-        image={heroDestination?.heroImage}
-        imageAlt={heroDestination?.alt ?? ""}
-        subtitle={`${siteTagline} NEXT STOP is a hostel-to-hostel network: you stay somewhere good, reception points you at the next place that is just as good, and the booking stays between you and the hostel.`}
+        title="Backpacking shouldn't end"
+        accent="at checkout."
+        image={vibes.campfire.src}
+        imageAlt={vibes.campfire.alt}
+        subtitle="NEXT STOP benefits everyone: backpackers, the hostels they stay in and the wider community. Together we build an ecosystem to make backpacking future-proof."
         crumbs={[{ label: "Home", href: "/" }, { label: "About" }]}
       >
         <div className="flex flex-wrap gap-3">
@@ -126,30 +125,37 @@ export default function AboutPage() {
           <div>
             <SectionHeading id="story" title="Our" accent="story" />
             <p className="max-w-[68ch] text-[14.5px] leading-[1.75] text-ink-600">
-              Independent travellers do not take one holiday a year. They move
-              city to city every few nights, deciding the next stop somewhere
-              between a bus station and a common room, usually with a
-              half-charged phone. Booking platforms are not built for that. Each
-              stay is treated as an isolated transaction, the search starts from
-              zero every time, and the hostel pays a commission for a guest it
-              often could have taken directly.
+              Backpackers usually don&rsquo;t take just one short holiday a
+              year. They move from destination to destination every few nights,
+              deciding their NEXT STOP somewhere between arriving at a bus
+              station and preparing their last breakfast at the hostel kitchen
+              counter &mdash; a little hungover, but excited for the trip ahead.
+              Major booking platforms aren&rsquo;t built for that. Each stay is
+              treated as an isolated transaction, and the search starts from
+              zero every time. Again and again. NEXT STOP is different:
+              we&rsquo;ve created a platform designed specifically for this way
+              of travelling. And to make it even better, it also lowers costs.
+              That&rsquo;s why everybody benefits.
             </p>
             <p className="mt-4 max-w-[68ch] text-[14.5px] leading-[1.75] text-ink-600">
-              The idea started on the Balkan backpacker trail, where the same
-              conversation happens at every reception desk: where are you going
-              next, and who should you stay with when you get there. The answer
-              was almost always a specific hostel, given by someone who had sent
-              guests there before. That recommendation was doing real work and
-              nobody was capturing it — not the traveller who still paid the
-              marketplace price, and not the hostel that gave it away for free.
+              The idea started in a hostel in Ohrid, North Macedonia, where the
+              same conversation happened over and over again: where to go next,
+              and where to stay. The answer was almost always the same: either
+              Skopje, the capital, or Tirana in Albania. Some hostels there had
+              a similar vibe, making them natural places to recommend. Those
+              recommendations had real value, but neither side benefited
+              financially &mdash; not the traveller, who still paid the usual
+              marketplace price, nor the hostel, which gave the recommendation
+              for free.
             </p>
             <p className="mt-4 max-w-[68ch] text-[14.5px] leading-[1.75] text-ink-600">
-              NEXT STOP turns that conversation into a booking. We are launching
-              in Spain, where the coastal and Andalusian routes are dense enough
-              that a traveller can stay inside the network for weeks, and the
-              Balkan cities the idea came from are mapped for the next phase.
-              This site is a pre-launch preview: the model is real, the listings
-              and prices in it are demo content until partners are signed.
+              NEXT STOP turns that conversation into a booking. With lower
+              prices and less hassle. We&rsquo;re launching in Spain, where the
+              coastal and Andalusian routes are dense enough for a traveller to
+              stay within the network for weeks. That gives us the chance to see
+              how it works, what to change and what to improve. This site is a
+              pre-launch preview: the model is real, but the listings and prices
+              are demo content until partners are signed.
             </p>
           </div>
 
@@ -162,10 +168,11 @@ export default function AboutPage() {
               <SpecRow label="Stage" value="Pre-launch preview" />
               <SpecRow label="First market" value="Spain" />
               <SpecRow label="Destinations listed" value={totalDestinations} />
-              <SpecRow label="Partner hostels" value={partnerHostels} />
-              <SpecRow label="How you get a pass" value="Scan a partner QR" />
-              <SpecRow label="App required" value="None" />
-              <SpecRow label="Commission on bookings" value="None" />
+              <SpecRow label="Partner Hostels" value={partnerHostels} />
+              <SpecRow
+                label="Founding Partner Hostels"
+                value={foundingPartnerHostels}
+              />
             </dl>
           </aside>
         </div>
@@ -180,43 +187,39 @@ export default function AboutPage() {
           <div>
             <SectionHeading id="mission" title="Our" accent="mission" />
             <p className="max-w-[68ch] text-[14.5px] leading-[1.75] text-ink-600">
-              We want to connect hostels and travellers into one network that
-              follows the journey instead of ending at checkout. A stay should
-              be able to open the next stay, in the next city, with a place the
-              people who hosted you would actually send their own friends to.
+              We want to connect hostels and travellers in one network that
+              follows the journey instead of ending at checkout. One stay should
+              unlock the next, in a new destination, at a place where the people
+              who hosted you would actually send their own friends.
             </p>
             <p className="mt-4 max-w-[68ch] text-[14.5px] leading-[1.75] text-ink-600">
-              That means keeping bookings direct. The reservation belongs to the
-              hostel and the guest, not to a middle layer that rewrites the
-              price on the way through. NEXT STOP introduces the two and then
+              That means keeping bookings more direct. The reservation belongs
+              to the hostel and the guest, not to a middle layer that changes
+              the price along the way. NEXT STOP introduces the two and then
               gets out of the way.
             </p>
             <p className="mt-4 max-w-[68ch] text-[14.5px] leading-[1.75] text-ink-600">
-              And it means keeping the value with the people who host. Money
-              that currently leaves a small hostel as commission should stay in
-              the building — in the beds, the breakfast and the staff who give
-              the recommendations in the first place.
+              It also means keeping the value with the people who host. Money
+              that currently leaves a small hostel through commissions should
+              stay within our community &mdash; in the beds, the breakfast and
+              the staff who give the recommendations. It should also stay in the
+              pockets of backpackers, who already spend plenty beyond
+              accommodation: on having fun, enjoying a good lunch, going out for
+              the night and simply getting from one destination to the next. You
+              can only spend your money once, so you might as well spend it
+              wisely.
             </p>
           </div>
 
-          {missionDestination ? (
-            <figure className="overflow-hidden rounded-xl border border-ink-100 bg-white">
-              <div className="photo-fallback relative aspect-[4/3] w-full">
-                <Image
-                  src={missionDestination.image}
-                  alt={missionDestination.alt}
-                  fill
-                  sizes="(min-width: 1024px) 460px, 100vw"
-                  className="object-cover"
-                />
-              </div>
-              <figcaption className="px-5 py-4 text-[12.5px] leading-relaxed text-ink-500">
-                {missionDestination.city} is one of {totalDestinations} cities
-                mapped for the network. The route between them is the product —
-                not any single night in it.
-              </figcaption>
-            </figure>
-          ) : null}
+          <figure className="overflow-hidden rounded-xl border border-ink-100 bg-white">
+            <NetworkWorldGraphic className="block h-auto w-full" />
+            <figcaption className="px-5 py-4 text-[12.5px] leading-relaxed text-ink-500">
+              One network, {totalDestinations} destinations: backpackers keep
+              moving, scanning the QR code at each hostel on the way to the
+              next. The route between them is the product — not any single
+              night in it.
+            </figcaption>
+          </figure>
         </div>
       </section>
 
@@ -228,8 +231,7 @@ export default function AboutPage() {
         <SectionHeading
           id="why-hostels"
           title="Why"
-          accent="hostels"
-          subtitle="The recommendation network already exists. It just has no way to turn into a booking."
+          accent="only hostels?"
         />
         <div className="grid gap-8 lg:grid-cols-[1.4fr_1fr] lg:gap-14">
           <div>
@@ -242,8 +244,8 @@ export default function AboutPage() {
               and will see you at breakfast tomorrow.
             </p>
             <p className="mt-4 max-w-[68ch] text-[14.5px] leading-[1.75] text-ink-600">
-              Independent hostels are also the ones squeezed hardest by
-              commission. A twenty-bed place in an old-town building has no
+              Independent hostels are also the ones squeezed hardest by booking
+              fees. A twenty-bed place in an old-town building has no
               revenue team, no negotiated rate and little room to absorb a
               double-digit fee on every reservation — so the fee ends up in the
               bed price, and the guest pays it without ever seeing it.
@@ -251,8 +253,8 @@ export default function AboutPage() {
             <p className="mt-4 max-w-[68ch] text-[14.5px] leading-[1.75] text-ink-600">
               Both problems have the same fix. If the recommendation a hostel
               already gives can carry a booking directly to the hostel it
-              recommends, the advice gets paid for and the commission stops
-              being a cost of doing business.
+              recommends, the advice gets paid for and a double-digit platform fee
+              stops being a cost of doing business.
             </p>
           </div>
 
@@ -260,7 +262,7 @@ export default function AboutPage() {
             {[
               "Reception already answers the “where next” question, dozens of times a week.",
               "The recommendation is specific — a named hostel, not a search result page.",
-              "Small independents carry the commission that big chains negotiate down.",
+              "Small independents carry the booking fees that big chains negotiate down.",
               "Hostels on the same route are not really competitors; they are the next night.",
             ].map((point) => (
               <li
@@ -294,11 +296,12 @@ export default function AboutPage() {
         />
         <p className="max-w-[68ch] text-[14.5px] leading-[1.75] text-ink-600">
           Every partner hostel has its own NEXT STOP QR code on display at
-          reception. You point your phone camera at it, a NEXT STOP page opens
-          in your browser — no app to install — and a short flow generates a
-          unique NEXT PASS code that lives on your phone. Enter that code when
-          you book your next partner hostel and it unlocks the direct rate: the
-          price the hostel sets when no commission is coming off the top.
+          reception. You point your phone camera at it, NEXT STOP opens on your
+          phone, and a short flow generates a unique NEXT PASS code that lives
+          there. Enter that code when
+          you book your next partner hostel and it unlocks the NEXT STOP rate: the
+          price a hostel can offer when a big platform&rsquo;s fee is not coming off
+          the top.
         </p>
         <p className="mt-4 max-w-[68ch] text-[14.5px] leading-[1.75] text-ink-600">
           The QR you scanned carries that hostel&rsquo;s identifier, so the
@@ -444,7 +447,7 @@ export default function AboutPage() {
           </h2>
           <p className="mt-3 max-w-[56ch] text-[13.5px] leading-relaxed text-white/70">
             If you are travelling, the pass is the part that matters: scan the
-            QR code at reception, get your code, unlock the direct rate in the
+            QR code at reception, get your code, unlock the NEXT STOP rate in the
             next city. If you run a hostel, the partner page explains what
             joining involves and what it is meant to be worth to you.
           </p>

@@ -43,7 +43,7 @@ export function Footer() {
       <div className="container-page py-12 lg:py-14">
         <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-[1.5fr_1fr_1fr_1fr_1fr_1.4fr] lg:gap-8">
           <div>
-            <Logo />
+            <Logo variant="full" height={74} />
             <p className="mt-4 max-w-[28ch] text-[12px] leading-relaxed text-ink-400">
               {siteTagline}
             </p>

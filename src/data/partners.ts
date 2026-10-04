@@ -21,6 +21,8 @@ export type PartnerValue = {
     | IconKey
     | "globe"
     | "bookings"
+    | "profit"
+    | "referral"
     | "handshake"
     | "chart"
     | "file"
@@ -31,20 +33,20 @@ export type PartnerValue = {
 
 export const whyJoin: PartnerValue[] = [
   {
-    icon: "bookings",
-    title: "More direct bookings",
+    icon: "profit",
+    title: "More profit",
     description:
-      "Guests arriving with a NEXT PASS book with you rather than through a marketplace, so the reservation lands in your system on your terms.",
+      "NEXT STOP creates an extra revenue stream for your hostel, without really doing anything. Guests scan your unique QR code to book their next hostel within the network, and you earn a commission. Their next stop becomes your next earning opportunity.",
   },
   {
-    icon: "handshake",
-    title: "Traveller referrals between hostels",
+    icon: "referral",
+    title: "Referrals through QR codes",
     description:
       "Every guest who scans your QR code carries your hostel's identifier onward — and every partner is doing the same back towards you.",
   },
   {
     icon: "globe",
-    title: "Exposure beyond your own city",
+    title: "Exposure beyond your own location",
     description:
       "Your hostel appears on destination pages, routes and guides that travellers read while planning the leg before yours.",
   },
@@ -52,7 +54,7 @@ export const whyJoin: PartnerValue[] = [
     icon: "scan",
     title: "One QR code, nothing to run",
     description:
-      "You display a single code at reception. The guest's own phone does the rest — no per-guest printing, no codes to type, no new system to learn.",
+      "You display a single code at reception. The guest's own phone does the rest — nothing to print, no codes to type, no new system to learn.",
   },
 ];
 
@@ -76,14 +78,14 @@ export const partnerFlow: FlowStep[] = [
     step: 2,
     title: "Reception points at the QR code",
     description:
-      "One sentence while handing over the key: your next stop starts with that code on the desk.",
+      "One extra sentence at check-in introduces your guests to our backpacker community.",
     actor: "hostel",
   },
   {
     step: 3,
     title: "The guest scans it with their phone",
     description:
-      "The QR opens a NEXT STOP page in their browser. No app to install and nothing for your staff to operate.",
+      "The QR opens a NEXT STOP page on their own phone. Nothing for your staff to operate.",
     actor: "traveller",
   },
   {
@@ -97,7 +99,7 @@ export const partnerFlow: FlowStep[] = [
     step: 5,
     title: "They book the next partner hostel",
     description:
-      "The code unlocks the direct rate at their next stop, so the onward booking goes straight to another partner.",
+      "The code unlocks the reduced rate at their NEXT STOP. The booking confirmation will go straight to our fellow partner.",
     actor: "traveller",
   },
   {
@@ -113,7 +115,7 @@ export const partnerFlow: FlowStep[] = [
 export const receptionDeskSteps = [
   {
     title: "Point at the code",
-    description: "One line during a check-in you are already doing.",
+    description: "One extra phrase during a check-in you are already doing.",
   },
   {
     title: "The guest scans",
@@ -155,9 +157,9 @@ export const foundingProgram: PartnerValue[] = [
 export const partnerBenefits: PartnerValue[] = [
   {
     icon: "bookings",
-    title: "More direct bookings",
+    title: "More NEXT STOP bookings",
     description:
-      "A NEXT PASS booking is a direct booking. You keep the guest relationship, the data and control over the rate you offer.",
+      "A NEXT PASS booking is a NEXT STOP booking. You keep the guest relationship, the data and control over the rate you offer.",
   },
   {
     icon: "handshake",

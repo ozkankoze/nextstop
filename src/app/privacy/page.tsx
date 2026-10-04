@@ -21,7 +21,7 @@ const sections: LegalSection[] = [
           NEXT STOP is a network that connects independent hostels with the
           travellers moving between them. A traveller scans the NEXT STOP QR
           code displayed at a partner hostel, gets a digital NEXT PASS code on
-          their phone, and uses it to unlock a partner&rsquo;s direct rate in
+          their phone, and uses it to unlock a partner&rsquo;s NEXT STOP rate in
           the next city, booking with the hostel rather than through a
           marketplace. This policy explains what
           personal information that model involves, why we need it, and what we
@@ -64,7 +64,7 @@ const sections: LegalSection[] = [
             <strong>Booking information.</strong> When booking opens: the
             traveller name, contact email, arrival and departure dates, number
             of guests, room type and the NEXT PASS code used to unlock the
-            direct rate.
+            NEXT STOP rate.
           </li>
           <li>
             <strong>Technical information.</strong> Standard server and device
@@ -127,11 +127,11 @@ const sections: LegalSection[] = [
       <>
         <p>
           A NEXT PASS is digital. Every partner hostel displays its own NEXT
-          STOP QR code at reception; scanning it with your phone camera opens a
-          NEXT STOP page in your browser, and a short flow generates a unique
-          pass code that is shown on your screen. There is no app to install and
-          no registration to work through, so there is no account behind a pass
-          and no profile attached to it.
+          STOP QR code at reception; scanning it with your phone camera opens NEXT
+          STOP, and a short flow generates a unique pass code that is shown on
+          your screen. There is no registration to work
+          through, so there is no account behind a pass and no profile attached
+          to it.
         </p>
         <p>
           The QR code carries the hostel&rsquo;s partner identifier, which is
@@ -153,7 +153,7 @@ const sections: LegalSection[] = [
           The booking itself is a different matter. To reserve a bed, the
           receiving hostel needs a name, contact details and your dates, and we
           pass exactly those to it. From that point the reservation is a normal
-          direct booking between you and the hostel, on the hostel&rsquo;s own
+          NEXT STOP booking between you and the hostel, on the hostel&rsquo;s own
           terms.
         </p>
         <p>

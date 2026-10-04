@@ -362,9 +362,9 @@ export default async function RoutePage({ params }: Props) {
         >
           <SectionHeading
             id="route-hostels"
-            title="Where to stay on this"
-            accent="route"
-            subtitle="Partner hostels in the cities above, bookable at the direct rate with a NEXT PASS."
+            title="Where to stay on"
+            accent="this route"
+            subtitle="Partner hostels in the cities above, bookable at the NEXT STOP rate with a NEXT PASS."
             action={{ label: "View all hostels", href: "/hostels" }}
           />
           <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -410,7 +410,7 @@ export default async function RoutePage({ params }: Props) {
             Check into a partner hostel in{" "}
             {stops[0] ? stops[0].destination.city : "your first city"} and scan
             the NEXT STOP QR code at reception. A digital pass appears on your
-            phone, and the code unlocks the direct rate at the next hostel on
+            phone, and the code unlocks the NEXT STOP rate at the next hostel on
             this route.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">

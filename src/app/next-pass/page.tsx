@@ -7,15 +7,16 @@ import { Accordion } from "@/components/ui/Accordion";
 import { Badge, DemoNote, ValueCard } from "@/components/ui/Misc";
 import { DigitalPassPhone } from "@/components/ui/DigitalPass";
 import { ScanFlow } from "@/components/sections/ScanFlow";
+import { FirstPassNote } from "@/components/sections/FirstPassNote";
 import {
   ArrowRightIcon,
   CheckIcon,
+  DoodleArrow,
   MapPinIcon,
   ScanIcon,
 } from "@/components/ui/Icons";
 import { euro } from "@/components/ui/PriceCompare";
 import { getFaqItems } from "@/data/faq";
-import { getDestination } from "@/data/destinations";
 import { getHostel } from "@/data/hostels";
 import {
   exampleJourney,
@@ -24,16 +25,14 @@ import {
   networkPoints,
   nextPassSteps,
   savingsExample,
-  travellerReasons,
 } from "@/data/next-pass";
+import { vibes } from "@/data/vibes";
 
 export const metadata: Metadata = {
   title: "NEXT PASS",
   description:
-    "NEXT PASS is a digital travel pass. Scan the QR code at a partner hostel's reception and a unique code appears on your phone — no app, no card, no sign-up.",
+    "NEXT PASS is a digital travel pass. Scan the QR code at a partner hostel's reception and a unique code appears on your phone, ready to unlock the partner rate at your next stop.",
 };
-
-const heroDestination = getDestination("valencia");
 
 const savingsRows = savingsExample
   .map((row) => {
@@ -64,7 +63,7 @@ const savingsTotals = savingsRows.reduce(
 );
 
 const quickFacts = [
-  "Your phone camera is enough — scanning opens a web page, not an app store",
+  "Your phone camera is all you need to pick one up",
   "The pass is generated on the spot and stays on your phone",
   "No physical card, no account, nothing handed over at reception",
 ];
@@ -79,8 +78,8 @@ export default function NextPassPage() {
         eyebrow="NEXT PASS"
         title="One pass."
         accent={"More adventures."}
-        image={heroDestination?.heroImage}
-        imageAlt={heroDestination?.alt ?? ""}
+        image={vibes.playingTogether.src}
+        imageAlt={vibes.playingTogether.alt}
         subtitle="Scan the QR code at your hostel's reception and a digital NEXT PASS appears on your phone — the code that unlocks the partner rate at your next stop."
         crumbs={[{ label: "Home", href: "/" }, { label: "Next Pass" }]}
       >
@@ -109,22 +108,29 @@ export default function NextPassPage() {
               titleAfter="?"
             />
             <p className="max-w-[68ch] text-[14.5px] leading-[1.75] text-ink-600">
-              A NEXT PASS is a digital travel pass that connects the hostel
-              you are in tonight to the one you sleep in next. It is a unique
-              code, generated on your phone, that marks you as someone moving
-              through the NEXT STOP network.
+              A NEXT PASS is a free digital travel pass
+              <a
+                href="#first-pass-note"
+                className="align-super text-[11px] font-semibold text-brand-500 no-underline hover:underline"
+              >
+                *
+              </a>{" "}
+              that connects the hostel you are in tonight to the one you sleep
+              in next. It is a unique code, generated on your phone, that marks
+              you as someone moving through the NEXT STOP network.
             </p>
             <p className="mt-4 max-w-[68ch] text-[14.5px] leading-[1.75] text-ink-600">
               Getting one takes a single scan. Every partner hostel has its own
               NEXT STOP QR code on display at reception; point your camera at
-              it, a NEXT STOP page opens in your browser, and your pass appears
+              it, NEXT STOP opens on your phone, and your pass appears
               on screen. It stays on your phone from there.
             </p>
             <p className="mt-4 max-w-[68ch] text-[14.5px] leading-[1.75] text-ink-600">
               When you book your next destination, that code unlocks the partner
-              hostel&apos;s direct rate — the price a hostel can offer when it
-              is not paying a booking platform a commission. You book with the
-              hostel; NEXT STOP simply connects the two of you.
+              hostel&apos;s special NEXT STOP rate — the price a hostel can
+              offer when it is not paying any booking platform a large
+              commission. You book with the hostel; NEXT STOP simply connects
+              the two of you.
             </p>
 
             <ul className="mt-6 space-y-3">
@@ -157,10 +163,10 @@ export default function NextPassPage() {
           id="scan-at-reception"
           title="Scan at reception,"
           accent="and go"
-          subtitle="The whole product, in one interaction: a QR code on the desk and a pass on your phone."
+          subtitle="The whole product, in one interaction: a QR code at the reception and the pass on your phone."
         />
 
-        <ScanFlow />
+        <ScanFlow withFirstPassNote />
 
         <div className="mt-5 rounded-xl border border-ink-100 bg-white px-5 py-4">
           <p className="text-[10.5px] font-semibold tracking-[0.18em] text-ink-400 uppercase">
@@ -184,30 +190,6 @@ export default function NextPassPage() {
         </div>
       </section>
 
-      {/* Why travellers use it */}
-      <section
-        aria-labelledby="why-travellers"
-        className="container-page pt-12 lg:pt-14"
-      >
-        <SectionHeading
-          id="why-travellers"
-          title="Why travellers"
-          accent="use it"
-          subtitle="Four reasons one scan ends up mattering more than it sounds."
-        />
-        <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {travellerReasons.map((reason) => (
-            <li key={reason.title}>
-              <ValueCard
-                icon={reason.icon}
-                title={reason.title}
-                description={reason.description}
-              />
-            </li>
-          ))}
-        </ul>
-      </section>
-
       {/* How the network works */}
       <section
         aria-labelledby="network-works"
@@ -215,10 +197,10 @@ export default function NextPassPage() {
       >
         <SectionHeading
           id="network-works"
-          title="How the"
-          accent="network"
+          title="How"
+          accent="the network"
           titleAfter="works"
-          subtitle="Hostels bring in hostels, and the pass is what carries a traveller between them."
+          subtitle="Hostels can refer to specific other partner hostels, or just encourage you to keep exploring within the network."
         />
         <ul className="grid gap-5 md:grid-cols-3">
           {networkPoints.map((point) => (
@@ -343,10 +325,21 @@ export default function NextPassPage() {
       >
         <SectionHeading
           id="savings-example"
-          title="What that looks like in"
-          accent="numbers"
+          title="What that looks like"
+          accent="in numbers"
           subtitle="The same three stays, priced with and without a pass."
         />
+
+        {/* The guarantee, pointing at the NEXT STOP total column */}
+        <div className="mb-2 hidden items-end justify-end gap-1.5 pr-[7.5rem] sm:flex lg:pr-[10.5rem]">
+          <p className="max-w-[30ch] text-right text-[13.5px] leading-snug font-semibold text-save">
+            We guarantee at least 5% discount on every single night!
+          </p>
+          <DoodleArrow
+            className="h-10 w-12 shrink-0 rotate-180 text-save"
+            aria-hidden
+          />
+        </div>
 
         {/* Table — tablet and desktop */}
         <div className="hidden overflow-hidden rounded-xl border border-ink-100 bg-white sm:block">
@@ -441,6 +434,13 @@ export default function NextPassPage() {
         </div>
 
         {/* Stacked cards — phones */}
+        <p className="mb-4 flex items-center gap-2 rounded-lg bg-save-bg px-3 py-2.5 text-[13px] leading-snug font-semibold text-save sm:hidden">
+          <DoodleArrow
+            className="h-7 w-9 shrink-0 rotate-90 text-save"
+            aria-hidden
+          />
+          We guarantee at least 5% discount on every single night!
+        </p>
         <ul className="grid gap-4 sm:hidden">
           {savingsRows.map((row) => (
             <li
@@ -501,10 +501,10 @@ export default function NextPassPage() {
         <DemoNote>
           These are demo prices from this preview build, not live rates. The
           totals above are calculated from the dorm prices listed on each
-          hostel&apos;s page and assume one bed per night. What you actually
-          save depends on the hostel, the room and the dates — a NEXT PASS
-          unlocks the hostel&apos;s own direct rate rather than a fixed
-          discount.
+          hostel&apos;s page and assume one bed per night. How much you save
+          depends on the hostel, the room and the dates — a NEXT PASS unlocks
+          the hostel&apos;s own NEXT STOP rate, which is always at least 5%
+          below the regular price and is often more.
         </DemoNote>
       </section>
 
@@ -556,6 +556,8 @@ export default function NextPassPage() {
               Become a partner
             </ButtonLink>
           </div>
+
+          <FirstPassNote className="mt-7 max-w-[46ch]" />
         </div>
       </section>
     </>

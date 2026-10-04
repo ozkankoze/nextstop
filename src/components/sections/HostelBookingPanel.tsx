@@ -46,7 +46,7 @@ export function HostelBookingPanel({ hostel }: { hostel: Hostel }) {
           <p className="mt-2 text-[12px] leading-relaxed text-ink-600">
             This is a preview of the NEXT STOP network. Nothing was submitted
             and no code was checked. When booking opens, the pass on your phone
-            will unlock {hostel.name}&apos;s direct rate here.
+            will unlock {hostel.name}&apos;s NEXT STOP rate here.
           </p>
           <button
             type="button"

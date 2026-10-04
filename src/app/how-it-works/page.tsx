@@ -5,21 +5,21 @@ import { PageHero } from "@/components/ui/PageHero";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ButtonLink } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Misc";
-import { ScanFlow } from "@/components/sections/ScanFlow";
+import { FirstPassNote } from "@/components/sections/FirstPassNote";
+import { TextWithLink } from "@/components/ui/TextWithLink";
 import {
   ArrowRightIcon,
   BackpackIcon,
   CalendarCheckIcon,
   CheckIcon,
-  CloseIcon,
   FlagIcon,
   MapPinIcon,
   QrCodeIcon,
   ScanIcon,
   SmartphoneIcon,
 } from "@/components/ui/Icons";
-import { getDestination } from "@/data/destinations";
 import { loopLabels, nextPassSteps, type StepIcon } from "@/data/next-pass";
+import { vibes } from "@/data/vibes";
 
 export const metadata: Metadata = {
   title: "How it Works",
@@ -36,32 +36,16 @@ const stepIcons: Record<StepIcon, ComponentType<SVGProps<SVGSVGElement>>> = {
   flag: FlagIcon,
 };
 
-const heroDestination = getDestination("granada");
-
-const youNeed = [
-  "A stay at a NEXT STOP partner hostel — that is what makes you eligible",
-  "A phone with a camera, to scan the QR code at reception",
-  "A browser on that phone; the pass opens as an ordinary web page",
-  "A rough idea of which city you are heading to next",
-];
-
-const youDoNotNeed = [
-  "An app — scanning opens a web page, not an app store",
-  "A physical card, a voucher or anything printed at reception",
-  "An account or a membership to sign up for and manage",
-  "A plan for the whole trip — each stay can unlock the next one",
-];
-
 export default function HowItWorksPage() {
   return (
     <>
       <PageHero
         size="lg"
         eyebrow="NEXT PASS"
-        title="How it"
-        accent="works"
-        image={heroDestination?.heroImage}
-        imageAlt={heroDestination?.alt ?? ""}
+        title="How"
+        accent="it works"
+        image={vibes.armsAroundShoulders.src}
+        imageAlt={vibes.armsAroundShoulders.alt}
         subtitle="Six steps, start to finish: what you scan at reception, what lands on your phone, and how one stay turns into the next."
         crumbs={[{ label: "Home", href: "/" }, { label: "How It Works" }]}
       >
@@ -82,20 +66,6 @@ export default function HowItWorksPage() {
         </ul>
       </PageHero>
 
-      {/* The scan, up front */}
-      <section
-        aria-labelledby="at-reception"
-        className="container-page pt-12 lg:pt-14"
-      >
-        <SectionHeading
-          id="at-reception"
-          title="What happens at"
-          accent="reception"
-          subtitle="Step 02 is the one everything else hangs off, so here it is first: a QR code on the desk, a pass on your phone."
-        />
-        <ScanFlow />
-      </section>
-
       {/* The six steps */}
       <section
         aria-labelledby="the-six-steps"
@@ -103,8 +73,8 @@ export default function HowItWorksPage() {
       >
         <SectionHeading
           id="the-six-steps"
-          title="The loop, step by"
-          accent="step"
+          title="How it works,"
+          accent="step by step"
           subtitle="The same six steps as on the home page, with the detail that would not fit there."
         />
 
@@ -165,7 +135,11 @@ export default function HowItWorksPage() {
                     {step.title}
                   </h3>
                   <p className="mt-1.5 text-[13.5px] leading-relaxed font-medium text-brand-600">
-                    {step.description}
+                    <TextWithLink
+                      text={step.description}
+                      link={step.descriptionLink}
+                      linkClassName="font-semibold underline underline-offset-2 transition-colors hover:text-brand-700"
+                    />
                   </p>
 
                   {step.detail.map((paragraph, paragraphIndex) => (
@@ -177,88 +151,26 @@ export default function HowItWorksPage() {
                     </p>
                   ))}
 
-                  <ul className="mt-4 space-y-2.5 border-t border-ink-100 pt-4">
-                    {step.notes.map((note) => (
-                      <li key={note} className="flex gap-2.5">
-                        <CheckIcon
-                          aria-hidden
-                          className="mt-0.5 h-4 w-4 shrink-0 text-brand-500"
-                        />
-                        <span className="text-[12.5px] leading-relaxed text-ink-500">
-                          {note}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
+                  {step.notes.length > 0 ? (
+                    <ul className="mt-4 space-y-2.5 border-t border-ink-100 pt-4">
+                      {step.notes.map((note) => (
+                        <li key={note} className="flex gap-2.5">
+                          <CheckIcon
+                            aria-hidden
+                            className="mt-0.5 h-4 w-4 shrink-0 text-brand-500"
+                          />
+                          <span className="text-[12.5px] leading-relaxed text-ink-500">
+                            {note}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : null}
                 </article>
               </li>
             );
           })}
         </ol>
-      </section>
-
-      {/* What you need / what you don't */}
-      <section
-        aria-labelledby="what-you-need"
-        className="container-page pt-12 lg:pt-14"
-      >
-        <SectionHeading
-          id="what-you-need"
-          title="What you need, and what you"
-          accent="don't"
-          subtitle="The whole checklist fits on one screen."
-        />
-        <div className="grid gap-5 md:grid-cols-2">
-          <article className="rounded-xl border border-ink-100 bg-white p-5 shadow-[0_2px_10px_-6px_rgba(6,9,15,0.14)] sm:p-6">
-            <h3 className="flex items-center gap-2 text-[15px] font-semibold text-ink-900">
-              <span
-                aria-hidden
-                className="grid h-8 w-8 place-items-center rounded-full bg-brand-50 text-brand-600"
-              >
-                <CheckIcon className="h-4 w-4" />
-              </span>
-              What you need
-            </h3>
-            <ul className="mt-4 space-y-3">
-              {youNeed.map((item) => (
-                <li key={item} className="flex gap-2.5">
-                  <CheckIcon
-                    aria-hidden
-                    className="mt-0.5 h-4 w-4 shrink-0 text-brand-500"
-                  />
-                  <span className="text-[12.5px] leading-relaxed text-ink-600">
-                    {item}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </article>
-
-          <article className="rounded-xl border border-ink-100 bg-ink-50 p-5 sm:p-6">
-            <h3 className="flex items-center gap-2 text-[15px] font-semibold text-ink-900">
-              <span
-                aria-hidden
-                className="grid h-8 w-8 place-items-center rounded-full bg-ink-100 text-ink-500"
-              >
-                <CloseIcon className="h-4 w-4" />
-              </span>
-              What you don&apos;t need
-            </h3>
-            <ul className="mt-4 space-y-3">
-              {youDoNotNeed.map((item) => (
-                <li key={item} className="flex gap-2.5">
-                  <CloseIcon
-                    aria-hidden
-                    className="mt-0.5 h-4 w-4 shrink-0 text-ink-400"
-                  />
-                  <span className="text-[12.5px] leading-relaxed text-ink-600">
-                    {item}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </article>
-        </div>
       </section>
 
       {/* Keep reading */}
@@ -345,6 +257,8 @@ export default function HowItWorksPage() {
               See the benefits
             </ButtonLink>
           </div>
+
+          <FirstPassNote className="mt-7 max-w-[46ch]" />
         </div>
       </section>
     </>

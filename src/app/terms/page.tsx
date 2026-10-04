@@ -19,7 +19,7 @@ const sections: LegalSection[] = [
       <>
         <p>
           NEXT STOP is a network that introduces travellers to independent
-          hostels and lets a stay at one partner unlock a direct booking at the
+          hostels and lets a stay at one partner unlock a NEXT STOP booking at the
           next. Using this site means accepting the terms on this page. If you
           do not accept them, please do not use the site or a NEXT PASS.
         </p>
@@ -51,15 +51,15 @@ const sections: LegalSection[] = [
       <>
         <p>
           A NEXT PASS is digital. Every partner hostel displays its own NEXT
-          STOP QR code at reception; scanning it with your phone opens a NEXT
-          STOP page in your browser, and a short flow generates a unique pass
-          code that is shown on your screen. There is no app to install, nothing
-          printed, nothing handed over and no membership to manage.
+          STOP QR code at reception; scanning it with your phone opens NEXT STOP,
+          and a short flow generates a unique pass code that is shown on your
+          screen. Nothing is printed, nothing is handed
+          over and there is no membership to manage.
         </p>
         <p>
-          The code unlocks the direct rate that partner hostels set for pass
+          The code unlocks the NEXT STOP rate that partner hostels set for pass
           holders. It does not guarantee availability, a particular price or a
-          particular room — it opens the direct booking channel, and what is
+          particular room — it opens the NEXT STOP booking channel, and what is
           free on your dates is up to the hostel.
         </p>
         <ul>
@@ -135,12 +135,12 @@ const sections: LegalSection[] = [
         <p>
           Hostels join the network by recommendation and by agreement with us.
           Each partner is responsible for the accuracy of its own listing —
-          description, photographs, amenities, house rules and the direct rate
+          description, photographs, amenities, house rules and the NEXT STOP rate
           it offers to pass holders — and for keeping that listing current.
         </p>
         <p>
           Partners agree to display their own NEXT STOP QR code where guests can
-          see it, to honour the direct rate for a valid NEXT PASS code when the
+          see it, to honour the NEXT STOP rate for a valid NEXT PASS code when the
           room is available, and to treat pass holders as ordinary direct guests
           in every other respect. The QR code is issued to that hostel alone and
           may not be copied, shared or displayed elsewhere. In return, a partner
@@ -170,8 +170,8 @@ const sections: LegalSection[] = [
           Generating a NEXT PASS involves no payment step: you scan the
           hostel&rsquo;s QR code and the code appears on your phone. If a charge
           ever applies to a pass, it will be shown in the flow before you
-          confirm it. NEXT STOP does not charge travellers a booking fee, a
-          service fee or a commission on top of the room rate.
+          confirm it. NEXT STOP does not add a booking fee or a service fee for
+          travellers on top of the room rate.
         </p>
         <p>
           Payment for the stay itself is a matter between you and the hostel,

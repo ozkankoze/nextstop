@@ -5,15 +5,13 @@ import { ButtonLink } from "@/components/ui/Button";
 import { Badge, DemoNote, ValueCard } from "@/components/ui/Misc";
 import { ArrowRightIcon } from "@/components/ui/Icons";
 import { partnerBenefits, partnerComparison } from "@/data/partners";
-import { getHostel } from "@/data/hostels";
+import { vibes } from "@/data/vibes";
 
 export const metadata: Metadata = {
   title: "Partner Benefits",
   description:
-    "What a hostel gets from the NEXT STOP network: direct bookings it keeps, referrals between partners on the same route, exposure beyond its own city and a reception flow that is one QR code on the desk.",
+    "What a hostel gets from the NEXT STOP network: NEXT STOP bookings it keeps, referrals between partners on the same route, exposure beyond its own city and a reception flow that is one QR code on the desk.",
 };
-
-const heroHostel = getHostel("triana-patio-seville");
 
 export default function PartnerBenefitsPage() {
   return (
@@ -21,10 +19,10 @@ export default function PartnerBenefitsPage() {
       <PageHero
         size="md"
         eyebrow="For hostels"
-        title="What the network"
-        accent="gives you back"
-        image={heroHostel?.images[0]}
-        imageAlt={heroHostel?.alt ?? ""}
+        title="What the network gives"
+        accent="you back"
+        image={vibes.laughingGroup.src}
+        imageAlt={vibes.laughingGroup.alt}
         subtitle="Direct bookings you keep, referrals from hostels one city upstream, and a reception flow that is one QR code on the desk."
         crumbs={[
           { label: "Home", href: "/" },

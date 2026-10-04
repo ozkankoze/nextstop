@@ -6,15 +6,13 @@ import { Badge, DataIcon, DemoNote } from "@/components/ui/Misc";
 import { ArrowRightIcon, MailIcon } from "@/components/ui/Icons";
 import { PartnerResourceAction } from "@/components/sections/PartnerResourceAction";
 import { partnerResources } from "@/data/partners";
-import { getHostel } from "@/data/hostels";
+import { vibes } from "@/data/vibes";
 
 export const metadata: Metadata = {
   title: "Partner Resources",
   description:
     "Everything a NEXT STOP partner hostel needs behind the desk: the reception guide, a staff quick guide, the partner FAQ and the material still being prepared.",
 };
-
-const heroHostel = getHostel("malasana-house-madrid");
 
 const availableCount = partnerResources.filter(
   (resource) => resource.status === "available"
@@ -26,10 +24,10 @@ export default function PartnerResourcesPage() {
       <PageHero
         size="md"
         eyebrow="Partner resource centre"
-        title="Everything you need"
-        accent="behind the desk"
-        image={heroHostel?.images[0]}
-        imageAlt={heroHostel?.alt ?? ""}
+        title="Everything you need behind"
+        accent="the desk"
+        image={vibes.stringLights.src}
+        imageAlt={vibes.stringLights.alt}
         subtitle="Your hostel's QR code kit, the reception guide and everything else a partner needs to run the NEXT PASS flow at the desk."
         crumbs={[
           { label: "Home", href: "/" },
